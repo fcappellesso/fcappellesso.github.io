@@ -3,154 +3,495 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Franchesca</title>
+
+  <title>Franchesca Lemos Cappellesso</title>
+
   <style>
     :root {
-      --ink: #f5f3ff;
-      --muted: #cbc5e7;
+      --ink: #f7f5ff;
+      --muted: #c9c5dc;
+      --soft: #9690ad;
       --violet: #a78bfa;
-      --gold: #fbbf24;
-      --night: #080816;
+      --violet-light: #d8ccff;
+      --gold: #f4c96b;
+      --night: #070712;
+      --panel: rgba(15, 13, 37, .58);
+      --border: rgba(255, 255, 255, .17);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       min-height: 100vh;
-      overflow: hidden;
-      display: grid;
-      place-items: center;
       color: var(--ink);
       font-family: Georgia, "Times New Roman", serif;
+
       background:
         radial-gradient(circle at 18% 18%, #5140a8 0, transparent 28%),
-        radial-gradient(circle at 80% 76%, #af5e49 0, transparent 24%),
+        radial-gradient(circle at 82% 78%, #934c49 0, transparent 24%),
+        radial-gradient(circle at 50% 45%, #1d183c 0, transparent 40%),
         linear-gradient(135deg, #09091a, #15112c 48%, #080816);
+
+      overflow-x: hidden;
     }
 
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      pointer-events: none;
-    }
+    /* Fundo orbital */
 
     body::before {
+      content: "";
+      position: fixed;
       width: 76vmax;
       height: 76vmax;
-      border: 1px solid rgba(255, 255, 255, .17);
-      border-radius: 50%;
-      background:
-        repeating-radial-gradient(
-          circle,
-          transparent 0 28px,
-          rgba(255, 255, 255, .06) 29px 30px
-        );
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      animation: breathe 18s ease-in-out infinite alternate;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      pointer-events: none;
+
+      background:
+        repeating-radial-gradient(
+          circle,
+          transparent 0 38px,
+          rgba(255,255,255,.045) 39px 40px
+        );
+
+      animation: breathe 24s ease-in-out infinite alternate;
     }
 
+    /* Grade */
+
     body::after {
+      content: "";
+      position: fixed;
       inset: -20%;
-      opacity: .22;
+      pointer-events: none;
+      opacity: .16;
+
       background-image:
-        linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
-      background-size: 42px 42px;
-      transform: perspective(700px) rotateX(64deg) translateY(19%);
+        linear-gradient(rgba(255,255,255,.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.10) 1px, transparent 1px);
+
+      background-size: 44px 44px;
+
+      transform:
+        perspective(700px)
+        rotateX(64deg)
+        translateY(20%);
+
       transform-origin: bottom;
     }
 
     @keyframes breathe {
-      from { transform: translate(-50%, -50%) rotate(0deg) scale(.92); }
-      to { transform: translate(-50%, -50%) rotate(180deg) scale(1.08); }
+      from {
+        transform:
+          translate(-50%, -50%)
+          rotate(0deg)
+          scale(.94);
+      }
+
+      to {
+        transform:
+          translate(-50%, -50%)
+          rotate(180deg)
+          scale(1.06);
+      }
     }
 
-    main {
+    .page {
       position: relative;
       z-index: 1;
-      width: min(720px, calc(100% - 40px));
-      padding: clamp(42px, 8vw, 82px) clamp(26px, 7vw, 72px);
+      width: min(1080px, calc(100% - 36px));
+      margin: auto;
+      padding: 30px 0 50px;
+    }
+
+    /* Cabeçalho discreto */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      padding: 4px 6px 24px;
+
+      font-family: Arial, sans-serif;
+    }
+
+    .name {
+      color: rgba(255,255,255,.78);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .coordinates {
+      color: var(--soft);
+      font-size: .7rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    /* Painel principal */
+
+    main {
+      padding:
+        clamp(50px, 8vw, 90px)
+        clamp(24px, 7vw, 76px);
+
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, .22);
-      border-radius: 30px;
-      background: rgba(15, 13, 37, .62);
-      box-shadow: 0 30px 90px rgba(0, 0, 0, .42);
+
+      border: 1px solid var(--border);
+      border-radius: 34px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(23,19,52,.74),
+          rgba(10,9,27,.61)
+        );
+
+      box-shadow:
+        0 35px 100px rgba(0,0,0,.42),
+        inset 0 1px rgba(255,255,255,.06);
+
       backdrop-filter: blur(18px);
     }
 
-    .paradox {
-      margin: 0 0 22px;
+    .eyebrow {
+      margin: 0 0 20px;
+
       color: var(--gold);
+
       font-family: Arial, sans-serif;
-      font-size: .72rem;
+      font-size: .69rem;
       font-weight: 700;
-      letter-spacing: .22em;
+
+      letter-spacing: .28em;
       text-transform: uppercase;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(3.2rem, 10vw, 6.5rem);
+      max-width: 850px;
+      margin: 0 auto;
+
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
       font-weight: 400;
-      letter-spacing: -.07em;
-      line-height: .9;
-      text-shadow: 3px 3px 0 rgba(167, 139, 250, .5);
+
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    h1 span {
+      color: var(--violet-light);
+      font-style: italic;
     }
 
     .line {
       width: 90px;
       height: 2px;
-      margin: 32px auto;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+
+      margin: 30px auto;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
     }
 
-    p {
-      max-width: 540px;
+    .intro {
+      max-width: 660px;
       margin: 0 auto;
+
       color: var(--muted);
-      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
-      line-height: 1.7;
+
+      font-size: clamp(1.02rem, 2.3vw, 1.22rem);
+      line-height: 1.75;
     }
 
-    a {
-      display: inline-block;
-      margin-top: 34px;
-      padding: 14px 22px;
-      border: 1px solid rgba(255, 255, 255, .38);
-      border-radius: 999px;
-      color: var(--ink);
+    /* Constelação de interesses */
+
+    .interests {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 14px;
+
+      max-width: 800px;
+
+      margin:
+        clamp(42px, 7vw, 68px)
+        auto
+        0;
+    }
+
+    .interest {
+      position: relative;
+      min-height: 132px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      padding: 20px;
+
+      text-align: left;
+
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.075),
+          rgba(255,255,255,.025)
+        );
+
+      cursor: default;
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+    }
+
+    .interest:hover {
+      transform: translateY(-5px);
+
+      border-color: rgba(167,139,250,.48);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(167,139,250,.16),
+          rgba(251,191,36,.06)
+        );
+    }
+
+    .symbol {
+      color: var(--gold);
+
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+    }
+
+    .interest h2 {
+      margin: 18px 0 4px;
+
       font-family: Arial, sans-serif;
-      font-size: .9rem;
-      font-weight: 700;
-      letter-spacing: .04em;
-      text-decoration: none;
-      background: linear-gradient(135deg, rgba(167,139,250,.38), rgba(251,191,36,.26));
-      transition: transform .2s ease, background .2s ease;
+      font-size: .95rem;
+      letter-spacing: .08em;
+
+      text-transform: uppercase;
     }
 
-    a:hover {
-      transform: translateY(-3px);
-      background: linear-gradient(135deg, rgba(167,139,250,.65), rgba(251,191,36,.48));
+    .interest p {
+      margin: 0;
+
+      color: var(--soft);
+
+      font-family: Arial, sans-serif;
+      font-size: .76rem;
+
+      line-height: 1.5;
+    }
+
+    .soon {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+
+      color: rgba(255,255,255,.35);
+
+      font-family: Arial, sans-serif;
+      font-size: .55rem;
+
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    footer {
+      padding: 26px 10px 0;
+
+      text-align: center;
+
+      color: rgba(255,255,255,.38);
+
+      font-family: Arial, sans-serif;
+      font-size: .67rem;
+
+      letter-spacing: .12em;
+    }
+
+    /* Tablet */
+
+    @media (max-width: 760px) {
+      .interests {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .coordinates {
+        display: none;
+      }
+    }
+
+    /* Celular */
+
+    @media (max-width: 480px) {
+      .page {
+        width: min(100% - 22px, 1080px);
+        padding-top: 18px;
+      }
+
+      header {
+        justify-content: center;
+        padding-bottom: 16px;
+      }
+
+      main {
+        border-radius: 26px;
+      }
+
+      .interests {
+        grid-template-columns: 1fr;
+      }
+
+      .interest {
+        min-height: 115px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <main>
-    <p class="paradox">entre o que se pensa e o que se aprende</p>
-    <h1>Franchesca</h1>
-    <div class="line"></div>
-    <p>
-      Este é meu espaço na internet para reunir ideias, estudos,
-      reflexões e aprendizados.
-    </p>
-    <a>Mathematics</a>
-    <a>Mechatronics</a>
-    <a>Medicine</a>
-    <a>Music</a>
-  </main>
+
+  <div class="page">
+
+    <header>
+      <div class="name">
+        Franchesca Lemos Cappellesso
+      </div>
+
+      <div class="coordinates">
+        Curiosity · Knowledge · Discovery
+      </div>
+    </header>
+
+    <main>
+
+      <p class="eyebrow">
+        entre o que se sabe e tudo o que ainda há para descobrir
+      </p>
+
+      <h1>
+        Explore. Learn.<br>
+        <span>Stay curious.</span>
+      </h1>
+
+      <div class="line"></div>
+
+      <p class="intro">
+        Um espaço pessoal dedicado à curiosidade,
+        ao estudo e às diferentes formas de compreender
+        o mundo — da matemática ao universo,
+        da tecnologia à arte.
+      </p>
+
+      <section class="interests">
+
+        <div class="interest">
+          <span class="soon">em breve</span>
+          <span class="symbol">∑</span>
+
+          <div>
+            <h2>Mathematics</h2>
+            <p>
+              Pesquisa, estudo e beleza matemática.
+            </p>
+          </div>
+        </div>
+
+        <div class="interest">
+          <span class="soon">em breve</span>
+          <span class="symbol">⚙</span>
+
+          <div>
+            <h2>Mechatronics</h2>
+            <p>
+              Tecnologia, engenharia e criação.
+            </p>
+          </div>
+        </div>
+
+        <div class="interest">
+          <span class="soon">em breve</span>
+          <span class="symbol">☯</span>
+
+          <div>
+            <h2>Medicine</h2>
+            <p>
+              Medicina Tradicional Chinesa e estudos.
+            </p>
+          </div>
+        </div>
+
+        <div class="interest">
+          <span class="soon">em breve</span>
+          <span class="symbol">♫</span>
+
+          <div>
+            <h2>Music</h2>
+            <p>
+              Música, percepção e expressão.
+            </p>
+          </div>
+        </div>
+
+        <div class="interest">
+          <span class="soon">em breve</span>
+          <span class="symbol">✦</span>
+
+          <div>
+            <h2>Universe</h2>
+            <p>
+              Espaço, tempo, cosmologia e curiosidades.
+            </p>
+          </div>
+        </div>
+
+        <div class="interest">
+          <span class="soon">em breve</span>
+          <span class="symbol">∞</span>
+
+          <div>
+            <h2>Projects</h2>
+            <p>
+              Guias, ideias e projetos independentes.
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer>
+      FRANCHESCA LEMOS CAPPELLESSO · PERSONAL SPACE
+    </footer>
+
+  </div>
+
 </body>
 </html>
