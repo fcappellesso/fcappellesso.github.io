@@ -5,7 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Franchesca Lemos Cappellesso</title>
+    /* Robozinho */
 
+    .robo {
+      display: block;
+      width: clamp(96px, 14vw, 140px);
+      height: auto;
+      margin: 0 auto 26px;
+      overflow: visible;
+      filter: drop-shadow(0 10px 18px rgba(167,139,250,.35));
+    }
+
+    .robo .corpo {
+      animation: flutuar 3.2s ease-in-out infinite;
+    }
+
+    .robo .olhos {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: piscar 4.5s infinite;
+    }
+
+    .robo .antena {
+      animation: brilho 1.6s ease-in-out infinite alternate;
+    }
+
+    .robo .braco-e {
+      animation: digitar .35s steps(1) infinite;
+    }
+
+    .robo .braco-d {
+      animation: digitar .35s steps(1) infinite .17s;
+    }
+
+    .robo .sombra {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: sombra 3.2s ease-in-out infinite;
+    }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-1px); }
+    }
+
+    @keyframes piscar {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95%           { transform: scaleY(.1); }
+    }
+
+    @keyframes brilho {
+      from { fill: #f4c96b; }
+      to   { fill: #fff3c4; }
+    }
+
+    @keyframes digitar {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-.5px); }
+    }
+
+    @keyframes sombra {
+      0%, 100% { transform: scaleX(1);   opacity: .35; }
+      50%      { transform: scaleX(.8);  opacity: .2; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .robo * { animation: none !important; }
+    }
   <style>
     :root {
       --ink: #f7f5ff;
@@ -390,7 +456,56 @@
     </header>
 
     <main>
+      <svg class="robo" viewBox="0 0 24 26" shape-rendering="crispEdges"
+           role="img" aria-label="Robozinho digitando num laptop">
 
+        <!-- sombra no chão -->
+        <rect class="sombra" x="6" y="25" width="12" height="1" fill="#000"/>
+
+        <g class="corpo">
+          <!-- antena -->
+          <rect class="antena" x="10" y="0" width="4" height="2" fill="#f4c96b"/>
+          <rect x="11" y="2" width="2" height="2" fill="#c9c5dc"/>
+
+          <!-- orelhas -->
+          <rect x="3"  y="7" width="2" height="4" fill="#7c5ce0"/>
+          <rect x="19" y="7" width="2" height="4" fill="#7c5ce0"/>
+
+          <!-- cabeça -->
+          <rect x="6" y="4"  width="12" height="1" fill="#a78bfa"/>
+          <rect x="5" y="5"  width="14" height="8" fill="#a78bfa"/>
+          <rect x="6" y="13" width="12" height="1" fill="#a78bfa"/>
+          <rect x="6" y="5"  width="3"  height="1" fill="#d8ccff"/>
+
+          <!-- visor -->
+          <rect x="7" y="6" width="10" height="6" fill="#15112c"/>
+
+          <!-- olhos -->
+          <g class="olhos">
+            <rect x="9"  y="8" width="2" height="2" fill="#7ee7ff"/>
+            <rect x="13" y="8" width="2" height="2" fill="#7ee7ff"/>
+          </g>
+          <rect x="11" y="10" width="2" height="1" fill="#7ee7ff" opacity=".7"/>
+
+          <!-- pescoço e tronco -->
+          <rect x="10" y="14" width="4"  height="1" fill="#7c5ce0"/>
+          <rect x="7"  y="15" width="10" height="6" fill="#a78bfa"/>
+
+          <!-- braços -->
+          <rect class="braco-e" x="5"  y="16" width="2" height="5" fill="#7c5ce0"/>
+          <rect class="braco-d" x="17" y="16" width="2" height="5" fill="#7c5ce0"/>
+
+          <!-- laptop (vista de trás) -->
+          <rect x="7"  y="16" width="10" height="5" fill="#c9c5dc"/>
+          <rect x="8"  y="17" width="8"  height="3" fill="#9690ad"/>
+          <rect x="11" y="18" width="2"  height="1" fill="#f4c96b"/>
+          <rect x="5"  y="21" width="14" height="1" fill="#6f6a88"/>
+
+          <!-- pés -->
+          <rect x="8"  y="22" width="3" height="2" fill="#7c5ce0"/>
+          <rect x="13" y="22" width="3" height="2" fill="#7c5ce0"/>
+        </g>
+      </svg>
       <p class="eyebrow">
         entre o que se sabe e tudo o que ainda há para descobrir
       </p>
