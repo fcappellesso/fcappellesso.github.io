@@ -397,13 +397,29 @@
       animation: brilho 1.6s ease-in-out infinite alternate;
     }
 
-    .robo .braco-e {
-      animation: digitar .35s steps(1) infinite;
-    }
+    .robo .braco-e,
+.robo .braco-d {
+  transform-box: fill-box;
+  transform-origin: center;
+}
 
-    .robo .braco-d {
-      animation: digitar .35s steps(1) infinite .17s;
-    }
+.robo .braco-e {
+  animation: digitar-esquerda .55s ease-in-out infinite alternate;
+}
+
+.robo .braco-d {
+  animation: digitar-direita .55s ease-in-out infinite alternate .25s;
+}
+
+@keyframes digitar-esquerda {
+  from { transform: translate(-1px, 0) rotate(-2deg); }
+  to   { transform: translate(2px, 4px) rotate(3deg); }
+}
+
+@keyframes digitar-direita {
+  from { transform: translate(1px, 0) rotate(2deg); }
+  to   { transform: translate(-2px, 4px) rotate(-3deg); }
+}
 
     .robo .sombra {
       transform-box: fill-box;
@@ -425,11 +441,7 @@
       from { fill: #f4c96b; }
       to   { fill: #fff3c4; }
     }
-
-    @keyframes digitar {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-1px); }
-    }
+    
     @keyframes sombra {
       0%, 100% { transform: scaleX(1);   opacity: .35; }
       50%      { transform: scaleX(.8);  opacity: .2; }
@@ -456,99 +468,96 @@
     </header>
 
     <main>
-            <svg class="robo" viewBox="0 0 48 52" shape-rendering="crispEdges"
-           role="img" aria-label="Robozinho digitando num laptop">
+            <svg class="robo" viewBox="0 0 180 180"
+     role="img" aria-label="Robozinho digitando em um laptop">
+  <defs>
+    <linearGradient id="robot-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8ccff"/>
+      <stop offset=".55" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#7c5ce0"/>
+    </linearGradient>
 
-        <!-- sombra no chão -->
-        <g class="sombra">
-          <rect x="15" y="49" width="18" height="1" fill="#000"/>
-          <rect x="12" y="50" width="24" height="1" fill="#000"/>
-          <rect x="15" y="51" width="18" height="1" fill="#000"/>
-        </g>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#29234f"/>
+      <stop offset="1" stop-color="#100e26"/>
+    </linearGradient>
+  </defs>
 
-        <g class="corpo">
-          <!-- antena -->
-          <g class="antena">
-            <rect x="22" y="0" width="4" height="1" fill="#f4c96b"/>
-            <rect x="21" y="1" width="6" height="4" fill="#f4c96b"/>
-            <rect x="22" y="5" width="4" height="1" fill="#f4c96b"/>
-          </g>
-          <rect x="23" y="5" width="2" height="3" fill="#c9c5dc"/>
-          <!-- orelhas -->
-          <rect x="7" y="13" width="2" height="1" fill="#7c5ce0"/>
-          <rect x="6" y="14" width="4" height="9" fill="#7c5ce0"/>
-          <rect x="7" y="23" width="2" height="1" fill="#7c5ce0"/>
-          <rect x="39" y="13" width="2" height="1" fill="#7c5ce0"/>
-          <rect x="38" y="14" width="4" height="9" fill="#7c5ce0"/>
-          <rect x="39" y="23" width="2" height="1" fill="#7c5ce0"/>
-          <!-- cabeça -->
-          <rect x="13" y="7" width="22" height="1" fill="#a78bfa"/>
-          <rect x="12" y="8" width="24" height="1" fill="#a78bfa"/>
-          <rect x="11" y="9" width="26" height="1" fill="#a78bfa"/>
-          <rect x="10" y="10" width="28" height="1" fill="#a78bfa"/>
-          <rect x="9" y="11" width="30" height="14" fill="#a78bfa"/>
-          <rect x="10" y="25" width="28" height="1" fill="#a78bfa"/>
-          <rect x="11" y="26" width="26" height="1" fill="#a78bfa"/>
-          <rect x="12" y="27" width="24" height="1" fill="#a78bfa"/>
-          <rect x="13" y="28" width="22" height="1" fill="#a78bfa"/>
-          <rect x="13" y="9" width="8" height="2" fill="#d8ccff"/>
-          <!-- visor -->
-          <rect x="15" y="12" width="18" height="1" fill="#15112c"/>
-          <rect x="14" y="13" width="20" height="1" fill="#15112c"/>
-          <rect x="13" y="14" width="22" height="9" fill="#15112c"/>
-          <rect x="14" y="23" width="20" height="1" fill="#15112c"/>
-          <rect x="15" y="24" width="18" height="1" fill="#15112c"/>
-          <!-- olhos -->
-          <g class="olhos">
-            <rect x="18" y="15" width="3" height="1" fill="#7ee7ff"/>
-            <rect x="17" y="16" width="5" height="4" fill="#7ee7ff"/>
-            <rect x="18" y="20" width="3" height="1" fill="#7ee7ff"/>
-            <rect x="27" y="15" width="3" height="1" fill="#7ee7ff"/>
-            <rect x="26" y="16" width="5" height="4" fill="#7ee7ff"/>
-            <rect x="27" y="20" width="3" height="1" fill="#7ee7ff"/>
-            <rect x="18" y="16" width="1" height="1" fill="#ffffff"/>
-            <rect x="27" y="16" width="1" height="1" fill="#ffffff"/>
-          </g>
-          <!-- sorriso -->
-          <rect x="21" y="22" width="1" height="1" fill="#7ee7ff" opacity=".7"/>
-          <rect x="22" y="23" width="4" height="1" fill="#7ee7ff" opacity=".7"/>
-          <rect x="26" y="22" width="1" height="1" fill="#7ee7ff" opacity=".7"/>
-          <!-- pescoço e tronco -->
-          <rect x="20" y="28" width="8" height="3" fill="#7c5ce0"/>
-          <rect x="17" y="30" width="14" height="1" fill="#a78bfa"/>
-          <rect x="15" y="31" width="18" height="2" fill="#a78bfa"/>
-          <rect x="14" y="33" width="20" height="7" fill="#a78bfa"/>
-          <rect x="15" y="40" width="18" height="2" fill="#a78bfa"/>
-          <rect x="17" y="42" width="14" height="1" fill="#a78bfa"/>
-          <!-- braços -->
-          <g class="braco-e">
-            <rect x="10" y="32" width="4" height="1" fill="#7c5ce0"/>
-            <rect x="9" y="33" width="6" height="9" fill="#7c5ce0"/>
-            <rect x="10" y="42" width="4" height="1" fill="#7c5ce0"/>
-          </g>
-          <g class="braco-d">
-            <rect x="34" y="32" width="4" height="1" fill="#7c5ce0"/>
-            <rect x="33" y="33" width="6" height="9" fill="#7c5ce0"/>
-            <rect x="34" y="42" width="4" height="1" fill="#7c5ce0"/>
-          </g>
-          <!-- laptop (vista de trás) -->
-          <rect x="15" y="32" width="18" height="1" fill="#c9c5dc"/>
-          <rect x="14" y="33" width="20" height="8" fill="#c9c5dc"/>
-          <rect x="15" y="41" width="18" height="1" fill="#c9c5dc"/>
-          <rect x="16" y="34" width="16" height="6" fill="#9690ad"/>
-          <rect x="23" y="35" width="2" height="1" fill="#f4c96b"/>
-          <rect x="22" y="36" width="4" height="2" fill="#f4c96b"/>
-          <rect x="23" y="38" width="2" height="1" fill="#f4c96b"/>
-          <rect x="10" y="42" width="28" height="2" fill="#6f6a88"/>
-          <!-- pés -->
-          <rect x="17" y="44" width="4" height="1" fill="#7c5ce0"/>
-          <rect x="16" y="45" width="6" height="2" fill="#7c5ce0"/>
-          <rect x="17" y="47" width="4" height="1" fill="#7c5ce0"/>
-          <rect x="27" y="44" width="4" height="1" fill="#7c5ce0"/>
-          <rect x="26" y="45" width="6" height="2" fill="#7c5ce0"/>
-          <rect x="27" y="47" width="4" height="1" fill="#7c5ce0"/>
-        </g>
-      </svg>
+  <ellipse class="sombra" cx="90" cy="160" rx="57" ry="8" fill="#000"/>
+
+  <g class="corpo">
+    <!-- antena -->
+    <path d="M90 30V18" stroke="#c9c5dc" stroke-width="5" stroke-linecap="round"/>
+    <circle class="antena" cx="90" cy="13" r="8" fill="#f4c96b"/>
+
+    <!-- orelhas -->
+    <rect x="35" y="68" width="15" height="33" rx="7.5" fill="#7c5ce0"/>
+    <rect x="130" y="68" width="15" height="33" rx="7.5" fill="#7c5ce0"/>
+
+    <!-- cabeça -->
+    <rect x="43" y="35" width="94" height="77" rx="31" fill="url(#robot-body)"/>
+    <path d="M59 48C76 39 109 39 123 51"
+          fill="none" stroke="#f2edff" stroke-width="5"
+          stroke-linecap="round" opacity=".55"/>
+
+    <!-- visor -->
+    <rect x="55" y="58" width="70" height="38" rx="17" fill="#15112c"/>
+
+    <!-- olhos -->
+    <g class="olhos">
+      <ellipse cx="76" cy="77" rx="9" ry="8" fill="#7ee7ff"/>
+      <ellipse cx="104" cy="77" rx="9" ry="8" fill="#7ee7ff"/>
+      <circle cx="73" cy="74" r="2.5" fill="#fff"/>
+      <circle cx="101" cy="74" r="2.5" fill="#fff"/>
+    </g>
+
+    <!-- sorriso -->
+    <path d="M82 89Q90 96 98 89"
+          fill="none" stroke="#7ee7ff" stroke-width="3"
+          stroke-linecap="round"/>
+
+    <!-- pescoço e tronco -->
+    <rect x="81" y="108" width="18" height="14" rx="7" fill="#7c5ce0"/>
+    <path d="M61 121Q90 108 119 121V144Q90 154 61 144Z"
+          fill="url(#robot-body)"/>
+
+    <!-- braço esquerdo: mão sobre teclado -->
+    <g class="braco-e">
+      <path d="M64 124Q46 130 48 145Q49 151 57 149L76 140"
+            fill="none" stroke="#7c5ce0" stroke-width="13"
+            stroke-linecap="round"/>
+      <circle cx="77" cy="140" r="8" fill="#d8ccff"/>
+    </g>
+
+    <!-- braço direito: mão sobre teclado -->
+    <g class="braco-d">
+      <path d="M116 124Q134 130 132 145Q131 151 123 149L104 140"
+            fill="none" stroke="#7c5ce0" stroke-width="13"
+            stroke-linecap="round"/>
+      <circle cx="103" cy="140" r="8" fill="#d8ccff"/>
+    </g>
+
+    <!-- laptop: tela -->
+    <rect x="52" y="110" width="76" height="45" rx="7" fill="#c9c5dc"/>
+    <rect x="57" y="115" width="66" height="35" rx="4" fill="url(#screen)"/>
+    <circle cx="90" cy="132" r="5" fill="#f4c96b"/>
+
+    <!-- teclado inclinado -->
+    <path d="M46 155H134L146 168H34Z" fill="#6f6a88"/>
+    <path d="M48 156H132L139 165H41Z" fill="#9690ad"/>
+
+    <!-- teclas -->
+    <g fill="#d8ccff" opacity=".85">
+      <rect x="57" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="68" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="79" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="90" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="101" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="112" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="68" y="163" width="44" height="2.5" rx="1.25"/>
+    </g>
+  </g>
+</svg>
       <p class="eyebrow">
         entre o que se sabe e tudo o que ainda há para descobrir
       </p>
