@@ -8,15 +8,14 @@
     
   <style>
     :root {
-      --ink: #f7f5ff;
-      --muted: #c9c5dc;
-      --soft: #9690ad;
-      --violet: #a78bfa;
-      --violet-light: #d8ccff;
-      --gold: #f4c96b;
-      --night: #070712;
-      --panel: rgba(15, 13, 37, .58);
-      --border: rgba(255, 255, 255, .17);
+      --ink: #221d45;           /* azul-noite do texto */
+      --muted: #4b4570;
+      --soft: #6e6892;
+      --violet: #6a4fd6;
+      --gold: #b07d1e;          /* dourado escuro, legível no fundo claro */
+      --gold-light: #f4c96b;    /* dourado claro, sobre o violeta */
+      --dusk: #4b4388;          /* crepúsculo: faixas e contornos dos cartões */
+      --border: rgba(92, 66, 190, .16);
     }
 
     * {
@@ -34,10 +33,9 @@
       font-family: Georgia, "Times New Roman", serif;
 
       background:
-        radial-gradient(circle at 18% 18%, #5140a8 0, transparent 28%),
-        radial-gradient(circle at 82% 78%, #934c49 0, transparent 24%),
-        radial-gradient(circle at 50% 45%, #1d183c 0, transparent 40%),
-        linear-gradient(135deg, #09091a, #15112c 48%, #080816);
+        radial-gradient(circle at 18% 18%, #e4dcff 0, transparent 30%),
+        radial-gradient(circle at 82% 78%, #ffe1d6 0, transparent 26%),
+        linear-gradient(135deg, #fbfaff, #f4f0ff 48%, #fdf9f3);
 
       overflow-x: hidden;
     }
@@ -52,7 +50,7 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      border: 1px solid rgba(255,255,255,.12);
+      border: 1px solid rgba(92,66,190,.16);
       border-radius: 50%;
       pointer-events: none;
 
@@ -60,7 +58,7 @@
         repeating-radial-gradient(
           circle,
           transparent 0 38px,
-          rgba(255,255,255,.045) 39px 40px
+          rgba(92,66,190,.08) 39px 40px
         );
 
       animation: breathe 24s ease-in-out infinite alternate;
@@ -73,11 +71,11 @@
       position: fixed;
       inset: -20%;
       pointer-events: none;
-      opacity: .16;
+      opacity: .4;
 
       background-image:
-        linear-gradient(rgba(255,255,255,.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.10) 1px, transparent 1px);
+        linear-gradient(rgba(92,66,190,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(92,66,190,.12) 1px, transparent 1px);
 
       background-size: 44px 44px;
 
@@ -127,7 +125,7 @@
     }
 
     .name {
-      color: rgba(255,255,255,.78);
+      color: rgba(34,29,69,.78);
       font-size: .78rem;
       font-weight: 600;
       letter-spacing: .13em;
@@ -156,13 +154,13 @@
       background:
         linear-gradient(
           145deg,
-          rgba(23,19,52,.74),
-          rgba(10,9,27,.61)
+          rgba(255,255,255,.82),
+          rgba(255,255,255,.6)
         );
 
       box-shadow:
-        0 35px 100px rgba(0,0,0,.42),
-        inset 0 1px rgba(255,255,255,.06);
+        0 30px 80px rgba(92,66,190,.14),
+        inset 0 1px rgba(255,255,255,.9);
 
       backdrop-filter: blur(18px);
     }
@@ -192,7 +190,7 @@
     }
 
     h1 span {
-      color: var(--violet-light);
+      color: var(--violet);
       font-style: italic;
     }
 
@@ -229,7 +227,7 @@
 
       gap: 14px;
 
-      max-width: 800px;
+      max-width: 920px;
 
       margin:
         clamp(42px, 7vw, 68px)
@@ -239,81 +237,97 @@
 
     .interest {
       position: relative;
-      min-height: 132px;
 
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      overflow: hidden;
 
-      padding: 20px;
+      text-align: center;
 
-      text-align: left;
-
-      border: 1px solid rgba(255,255,255,.15);
+      border: 1.5px solid rgba(75,67,136,.45);
       border-radius: 20px;
 
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.075),
-          rgba(255,255,255,.025)
-        );
+      background: #fff;
+
+      box-shadow:
+        0 12px 28px rgba(58,52,112,.16),
+        0 2px 6px rgba(58,52,112,.08);
 
       cursor: default;
 
       transition:
         transform .25s ease,
         border-color .25s ease,
-        background .25s ease;
+        box-shadow .25s ease;
     }
 
     .interest:hover {
       transform: translateY(-5px);
 
-      border-color: rgba(167,139,250,.48);
+      border-color: var(--dusk);
+
+      box-shadow:
+        0 18px 36px rgba(58,52,112,.24),
+        0 3px 8px rgba(58,52,112,.1);
+    }
+
+    /* Faixa superior do cartão, na cor crepúsculo */
+
+    .card-head {
+      position: relative;
+      min-height: 150px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px 18px 20px;
 
       background:
-        linear-gradient(
-          145deg,
-          rgba(167,139,250,.16),
-          rgba(251,191,36,.06)
-        );
+        radial-gradient(circle at 18% 0%, rgba(140,120,232,.55), transparent 60%),
+        linear-gradient(135deg, #3a3470, var(--dusk) 55%, #5a4a8f);
     }
 
     .symbol {
-      color: var(--gold);
+      display: block;
+
+      color: var(--gold-light);
 
       font-family: Georgia, serif;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
+      line-height: 1;
     }
 
     .interest h2 {
-      margin: 18px 0 4px;
+      margin: 12px 0 0;
+
+      color: #fff;
 
       font-family: Arial, sans-serif;
-      font-size: .95rem;
-      letter-spacing: .08em;
+      font-size: 1.05rem;
+      letter-spacing: .1em;
+      line-height: 1.35;
 
       text-transform: uppercase;
     }
 
     .interest p {
       margin: 0;
+      padding: 16px 20px 20px;
 
-      color: var(--soft);
+      color: #5d5782;
 
-      font-family: Arial, sans-serif;
-      font-size: .76rem;
-
-      line-height: 1.5;
+      font-size: .93rem;
+      line-height: 1.6;
     }
 
     .soon {
       position: absolute;
-      top: 16px;
-      right: 16px;
+      top: 12px;
+      right: 14px;
 
-      color: rgba(255,255,255,.35);
+      color: rgba(255,255,255,.62);
 
       font-family: Arial, sans-serif;
       font-size: .55rem;
@@ -327,7 +341,7 @@
 
       text-align: center;
 
-      color: rgba(255,255,255,.38);
+      color: rgba(34,29,69,.5);
 
       font-family: Arial, sans-serif;
       font-size: .67rem;
@@ -368,8 +382,8 @@
         grid-template-columns: 1fr;
       }
 
-      .interest {
-        min-height: 115px;
+      .card-head {
+        min-height: 120px;
       }
     }
     /* Robozinho */
@@ -587,75 +601,68 @@
       <section class="interests">
 
   <div class="interest">
-    <span class="soon">em breve</span>
-    <span class="symbol">∑</span>
-
-    <div>
+    <div class="card-head">
+      <span class="soon">em breve</span>
+      <span class="symbol">∑</span>
       <h2>Mathematics</h2>
-      <p>
-        Pesquisa, estudo e beleza matemática.
-      </p>
     </div>
+    <p>
+      Pesquisa, notas de estudo e seminários, das equações de evolução à beleza das demonstrações.
+    </p>
   </div>
 
   <div class="interest">
-    <span class="soon">em breve</span>
-    <span class="symbol">☯</span>
-
-    <div>
-      <h2>Medicina Tradicional Chinesa</h2>
-      <p>
-        Acupuntura, fitoterapia e estudos em MTC.
-      </p>
-    </div>
-  </div>
-
-  <div class="interest">
-    <span class="soon">em breve</span>
-    <span class="symbol">♫</span>
-
-    <div>
-      <h2>Music</h2>
-      <p>
-        Música, percepção e expressão.
-      </p>
-    </div>
-  </div>
-
-  <div class="interest">
-    <span class="soon">em breve</span>
-    <span class="symbol">🇮🇹</span>
-
-    <div>
+    <div class="card-head">
+      <span class="soon">em breve</span>
+      <span class="symbol">🇮🇹</span>
       <h2>Cidadania Italiana por Casamento</h2>
-      <p>
-        Guia prático, gratuito e baseado em experiência real.
-      </p>
     </div>
+    <p>
+      Guia prático e gratuito, passo a passo, para obter a cidadania italiana por casamento sem empresa privada.
+    </p>
   </div>
 
   <div class="interest">
-    <span class="soon">em breve</span>
-    <span class="symbol">✦</span>
+    <div class="card-head">
+      <span class="soon">em breve</span>
+      <span class="symbol">☯</span>
+      <h2>Medicina Tradicional Chinesa</h2>
+    </div>
+    <p>
+      Acupuntura, fitoterapia e os fundamentos da Medicina Tradicional Chinesa, explicados com clareza.
+    </p>
+  </div>
 
-    <div>
+  <div class="interest">
+    <div class="card-head">
+      <span class="soon">em breve</span>
+      <span class="symbol">♫</span>
+      <h2>Music</h2>
+    </div>
+    <p>
+      Música, percepção e expressão: estudos, repertório e reflexões sobre ouvir e tocar.
+    </p>
+  </div>
+
+  <div class="interest">
+    <div class="card-head">
+      <span class="soon">em breve</span>
+      <span class="symbol">✦</span>
       <h2>Curiosities</h2>
-      <p>
-        Ciência, universo, história e tudo aquilo que desperta curiosidade.
-      </p>
     </div>
+    <p>
+      Ciência, universo, história e tudo aquilo que desperta perguntas, em textos curtos e acessíveis.
+    </p>
   </div>
 
   <div class="interest">
-    <span class="symbol">✎</span>
-
-    <div>
+    <div class="card-head">
+      <span class="symbol">✎</span>
       <h2>Sugira um tema</h2>
-      <p>
-        Tem uma ideia, dúvida ou assunto interessante?
-        Envie uma sugestão.
-      </p>
     </div>
+    <p>
+      Tem uma ideia, dúvida ou assunto interessante? Envie uma sugestão.
+    </p>
   </div>
 
 </section>
