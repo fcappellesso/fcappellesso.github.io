@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="140" height="140"
+     role="img" aria-label="Robozinho digitando em um laptop">
+  <style>
+    .corpo  { animation: flutuar 3.2s ease-in-out infinite; }
+    .olhos  { transform-box: fill-box; transform-origin: center;
+              animation: piscar 4.5s infinite; }
+    .antena { animation: brilho 1.6s ease-in-out infinite alternate; }
+    .braco-e, .braco-d { transform-box: fill-box; transform-origin: center; }
+    .braco-e { animation: digitar-esquerda .55s ease-in-out infinite alternate; }
+    .braco-d { animation: digitar-direita .55s ease-in-out infinite alternate .25s; }
+    .sombra { transform-box: fill-box; transform-origin: center;
+              animation: sombra 3.2s ease-in-out infinite; }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-2px); }
+    }
+    @keyframes piscar {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95%           { transform: scaleY(.1); }
+    }
+    @keyframes brilho {
+      from { fill: #f4c96b; }
+      to   { fill: #fff3c4; }
+    }
+    @keyframes sombra {
+      0%, 100% { transform: scaleX(1);  opacity: .35; }
+      50%      { transform: scaleX(.8); opacity: .2; }
+    }
+    @keyframes digitar-esquerda {
+      from { transform: translate(-1px, 0) rotate(-2deg); }
+      to   { transform: translate(2px, 4px) rotate(3deg); }
+    }
+    @keyframes digitar-direita {
+      from { transform: translate(1px, 0) rotate(2deg); }
+      to   { transform: translate(-2px, 4px) rotate(-3deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="robot-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8ccff"/>
+      <stop offset=".55" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#7c5ce0"/>
+    </linearGradient>
+
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#29234f"/>
+      <stop offset="1" stop-color="#100e26"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse class="sombra" cx="90" cy="160" rx="57" ry="8" fill="#000"/>
+
+  <g class="corpo">
+    <!-- antena -->
+    <path d="M90 30V18" stroke="#c9c5dc" stroke-width="5" stroke-linecap="round"/>
+    <circle class="antena" cx="90" cy="13" r="8" fill="#f4c96b"/>
+
+    <!-- orelhas -->
+    <rect x="35" y="68" width="15" height="33" rx="7.5" fill="#7c5ce0"/>
+    <rect x="130" y="68" width="15" height="33" rx="7.5" fill="#7c5ce0"/>
+
+    <!-- cabeça -->
+    <rect x="43" y="35" width="94" height="77" rx="31" fill="url(#robot-body)"/>
+    <path d="M59 48C76 39 109 39 123 51"
+          fill="none" stroke="#f2edff" stroke-width="5"
+          stroke-linecap="round" opacity=".55"/>
+
+    <!-- visor -->
+    <rect x="55" y="58" width="70" height="38" rx="17" fill="#15112c"/>
+
+    <!-- olhos -->
+    <g class="olhos">
+      <ellipse cx="76" cy="77" rx="9" ry="8" fill="#7ee7ff"/>
+      <ellipse cx="104" cy="77" rx="9" ry="8" fill="#7ee7ff"/>
+      <circle cx="73" cy="74" r="2.5" fill="#fff"/>
+      <circle cx="101" cy="74" r="2.5" fill="#fff"/>
+    </g>
+
+    <!-- sorriso -->
+    <path d="M82 89Q90 96 98 89"
+          fill="none" stroke="#7ee7ff" stroke-width="3"
+          stroke-linecap="round"/>
+
+    <!-- pescoço e tronco -->
+    <rect x="81" y="108" width="18" height="14" rx="7" fill="#7c5ce0"/>
+    <path d="M61 121Q90 108 119 121V144Q90 154 61 144Z"
+          fill="url(#robot-body)"/>
+
+    <!-- braço esquerdo: mão sobre teclado -->
+    <g class="braco-e">
+      <path d="M64 124Q46 130 48 145Q49 151 57 149L76 140"
+            fill="none" stroke="#7c5ce0" stroke-width="13"
+            stroke-linecap="round"/>
+      <circle cx="77" cy="140" r="8" fill="#d8ccff"/>
+    </g>
+
+    <!-- braço direito: mão sobre teclado -->
+    <g class="braco-d">
+      <path d="M116 124Q134 130 132 145Q131 151 123 149L104 140"
+            fill="none" stroke="#7c5ce0" stroke-width="13"
+            stroke-linecap="round"/>
+      <circle cx="103" cy="140" r="8" fill="#d8ccff"/>
+    </g>
+
+    <!-- laptop: tela -->
+    <rect x="52" y="110" width="76" height="45" rx="7" fill="#c9c5dc"/>
+    <rect x="57" y="115" width="66" height="35" rx="4" fill="url(#screen)"/>
+    <text x="90" y="135"
+      text-anchor="middle"
+      fill="#f4c96b"
+      font-family="Arial, sans-serif"
+      font-size="9"
+      font-weight="700"
+      letter-spacing="1">
+  LAPTOP
+</text>
+
+    <!-- teclado inclinado -->
+    <path d="M46 155H134L146 168H34Z" fill="#6f6a88"/>
+    <path d="M48 156H132L139 165H41Z" fill="#9690ad"/>
+
+    <!-- teclas -->
+    <g fill="#d8ccff" opacity=".85">
+      <rect x="57" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="68" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="79" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="90" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="101" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="112" y="158" width="7" height="3" rx="1.5"/>
+      <rect x="68" y="163" width="44" height="2.5" rx="1.25"/>
+    </g>
+  </g>
+</svg>
