@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -137,6 +137,44 @@
       font-size: .7rem;
       letter-spacing: .16em;
       text-transform: uppercase;
+    }
+
+    /* Lema e seletor de idioma, à direita do nome */
+
+    .header-side {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .lang {
+      display: flex;
+      gap: 4px;
+    }
+
+    .lang button {
+      padding: 4px 7px;
+
+      color: var(--soft);
+
+      border: 0;
+      border-radius: 6px;
+      background: none;
+
+      font-family: Arial, sans-serif;
+      font-size: .7rem;
+      letter-spacing: .14em;
+
+      cursor: pointer;
+    }
+
+    .lang button:hover {
+      color: var(--violet);
+    }
+
+    .lang button[aria-pressed="true"] {
+      color: #fff;
+      background: var(--dusk);
     }
 
     /* Painel principal */
@@ -370,7 +408,9 @@
       }
 
       header {
+        flex-wrap: wrap;
         justify-content: center;
+        gap: 10px;
         padding-bottom: 16px;
       }
 
@@ -476,14 +516,22 @@
         Franchesca Lemos Cappellesso
       </div>
 
-      <div class="coordinates">
-        Curiosity · Knowledge · Discovery
+      <div class="header-side">
+        <div class="coordinates" data-i18n="coordinates">
+          Curiosity · Knowledge · Discovery
+        </div>
+
+        <nav class="lang" aria-label="Language">
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="pt">PT</button>
+          <button type="button" data-lang="it">IT</button>
+        </nav>
       </div>
     </header>
 
     <main>
             <svg class="robo" viewBox="0 0 180 180"
-     role="img" aria-label="Robozinho digitando em um laptop">
+     role="img" aria-label="Little robot typing on a laptop" data-i18n-aria="robot">
   <defs>
     <linearGradient id="robot-body" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#d8ccff"/>
@@ -580,8 +628,8 @@
     </g>
   </g>
 </svg>
-      <p class="eyebrow">
-        entre o que se sabe e tudo o que ainda há para descobrir
+      <p class="eyebrow" data-i18n="eyebrow">
+        between what we know and all that is still to be discovered
       </p>
 
       <h1>
@@ -591,77 +639,77 @@
 
       <div class="line"></div>
 
-      <p class="intro">
-        Um espaço pessoal dedicado à curiosidade,
-        ao estudo e às diferentes formas de compreender
-        o mundo — da matemática ao universo,
-        da tecnologia à arte.
+      <p class="intro" data-i18n="intro">
+        A personal space devoted to curiosity, to study
+        and to the many ways of understanding the world —
+        from mathematics to the universe,
+        from technology to art.
       </p>
 
       <section class="interests">
 
   <div class="interest">
     <div class="card-head">
-      <span class="soon">em breve</span>
+      <span class="soon" data-i18n="soon">coming soon</span>
       <span class="symbol">∑</span>
-      <h2>Mathematics</h2>
+      <h2 data-i18n="math-title">Mathematics</h2>
     </div>
-    <p>
-      Pesquisa, notas de estudo e seminários, das equações de evolução à beleza das demonstrações.
+    <p data-i18n="math-text">
+      Research, study notes and seminars, from evolution equations to the beauty of proofs.
     </p>
   </div>
 
   <div class="interest">
     <div class="card-head">
-      <span class="soon">em breve</span>
+      <span class="soon" data-i18n="soon">coming soon</span>
       <span class="symbol">🇮🇹</span>
-      <h2>Cidadania Italiana por Casamento</h2>
+      <h2 data-i18n="citizenship-title">Italian Citizenship by Marriage</h2>
     </div>
-    <p>
-      Guia prático e gratuito, passo a passo, para obter a cidadania italiana por casamento sem empresa privada.
+    <p data-i18n="citizenship-text">
+      A free, step-by-step practical guide to obtaining Italian citizenship by marriage without a private agency.
     </p>
   </div>
 
   <div class="interest">
     <div class="card-head">
-      <span class="soon">em breve</span>
+      <span class="soon" data-i18n="soon">coming soon</span>
       <span class="symbol">☯</span>
-      <h2>Medicina Tradicional Chinesa</h2>
+      <h2 data-i18n="tcm-title">Traditional Chinese Medicine</h2>
     </div>
-    <p>
-      Acupuntura, fitoterapia e os fundamentos da Medicina Tradicional Chinesa, explicados com clareza.
+    <p data-i18n="tcm-text">
+      Acupuncture, herbal medicine and the foundations of Traditional Chinese Medicine, clearly explained.
     </p>
   </div>
 
   <div class="interest">
     <div class="card-head">
-      <span class="soon">em breve</span>
+      <span class="soon" data-i18n="soon">coming soon</span>
       <span class="symbol">♫</span>
-      <h2>Music</h2>
+      <h2 data-i18n="music-title">Music</h2>
     </div>
-    <p>
-      Música, percepção e expressão: estudos, repertório e reflexões sobre ouvir e tocar.
+    <p data-i18n="music-text">
+      Music, perception and expression: studies, repertoire and reflections on listening and playing.
     </p>
   </div>
 
   <div class="interest">
     <div class="card-head">
-      <span class="soon">em breve</span>
+      <span class="soon" data-i18n="soon">coming soon</span>
       <span class="symbol">✦</span>
-      <h2>Curiosities</h2>
+      <h2 data-i18n="curiosities-title">Curiosities</h2>
     </div>
-    <p>
-      Ciência, universo, história e tudo aquilo que desperta perguntas, em textos curtos e acessíveis.
+    <p data-i18n="curiosities-text">
+      Science, the universe, history and everything that sparks questions, in short and accessible texts.
     </p>
   </div>
 
   <div class="interest">
     <div class="card-head">
       <span class="symbol">✎</span>
-      <h2>Sugira um tema</h2>
+      <h2 data-i18n="suggest-title">Suggest a topic</h2>
     </div>
-    <p>
-      Tem uma ideia, dúvida ou assunto interessante? Envie uma sugestão.
+    <p data-i18n="suggest-text">
+      Have an idea, a question or an interesting subject? Send a suggestion.
     </p>
   </div>
 
@@ -669,11 +717,118 @@
     
     </main>
 
-    <footer>
+    <footer data-i18n="footer">
       FRANCHESCA LEMOS CAPPELLESSO · PERSONAL SPACE
     </footer>
 
   </div>
 
+
+  <script>
+    // Textos da página nos três idiomas. O inglês já está escrito no HTML;
+    // ao escolher outro idioma, cada elemento com data-i18n recebe o texto
+    // correspondente desta tabela.
+    var textos = {
+      en: {
+        coordinates: 'Curiosity · Knowledge · Discovery',
+        eyebrow: 'between what we know and all that is still to be discovered',
+        intro: 'A personal space devoted to curiosity, to study and to the many ways of understanding the world — from mathematics to the universe, from technology to art.',
+        soon: 'coming soon',
+        'math-title': 'Mathematics',
+        'math-text': 'Research, study notes and seminars, from evolution equations to the beauty of proofs.',
+        'citizenship-title': 'Italian Citizenship by Marriage',
+        'citizenship-text': 'A free, step-by-step practical guide to obtaining Italian citizenship by marriage without a private agency.',
+        'tcm-title': 'Traditional Chinese Medicine',
+        'tcm-text': 'Acupuncture, herbal medicine and the foundations of Traditional Chinese Medicine, clearly explained.',
+        'music-title': 'Music',
+        'music-text': 'Music, perception and expression: studies, repertoire and reflections on listening and playing.',
+        'curiosities-title': 'Curiosities',
+        'curiosities-text': 'Science, the universe, history and everything that sparks questions, in short and accessible texts.',
+        'suggest-title': 'Suggest a topic',
+        'suggest-text': 'Have an idea, a question or an interesting subject? Send a suggestion.',
+        footer: 'FRANCHESCA LEMOS CAPPELLESSO · PERSONAL SPACE',
+        robot: 'Little robot typing on a laptop'
+      },
+      pt: {
+        coordinates: 'Curiosidade · Conhecimento · Descoberta',
+        eyebrow: 'entre o que se sabe e tudo o que ainda há para descobrir',
+        intro: 'Um espaço pessoal dedicado à curiosidade, ao estudo e às diferentes formas de compreender o mundo — da matemática ao universo, da tecnologia à arte.',
+        soon: 'em breve',
+        'math-title': 'Matemática',
+        'math-text': 'Pesquisa, notas de estudo e seminários, das equações de evolução à beleza das demonstrações.',
+        'citizenship-title': 'Cidadania Italiana por Casamento',
+        'citizenship-text': 'Guia prático e gratuito, passo a passo, para obter a cidadania italiana por casamento sem empresa privada.',
+        'tcm-title': 'Medicina Tradicional Chinesa',
+        'tcm-text': 'Acupuntura, fitoterapia e os fundamentos da Medicina Tradicional Chinesa, explicados com clareza.',
+        'music-title': 'Música',
+        'music-text': 'Música, percepção e expressão: estudos, repertório e reflexões sobre ouvir e tocar.',
+        'curiosities-title': 'Curiosidades',
+        'curiosities-text': 'Ciência, universo, história e tudo aquilo que desperta perguntas, em textos curtos e acessíveis.',
+        'suggest-title': 'Sugira um tema',
+        'suggest-text': 'Tem uma ideia, dúvida ou assunto interessante? Envie uma sugestão.',
+        footer: 'FRANCHESCA LEMOS CAPPELLESSO · ESPAÇO PESSOAL',
+        robot: 'Robozinho digitando em um laptop'
+      },
+      it: {
+        coordinates: 'Curiosità · Conoscenza · Scoperta',
+        eyebrow: 'tra ciò che si sa e tutto ciò che resta da scoprire',
+        intro: 'Uno spazio personale dedicato alla curiosità, allo studio e ai diversi modi di comprendere il mondo — dalla matematica all’universo, dalla tecnologia all’arte.',
+        soon: 'in arrivo',
+        'math-title': 'Matematica',
+        'math-text': 'Ricerca, appunti di studio e seminari, dalle equazioni di evoluzione alla bellezza delle dimostrazioni.',
+        'citizenship-title': 'Cittadinanza Italiana per Matrimonio',
+        'citizenship-text': 'Una guida pratica e gratuita, passo dopo passo, per ottenere la cittadinanza italiana per matrimonio senza agenzie private.',
+        'tcm-title': 'Medicina Tradizionale Cinese',
+        'tcm-text': 'Agopuntura, fitoterapia e i fondamenti della Medicina Tradizionale Cinese, spiegati con chiarezza.',
+        'music-title': 'Musica',
+        'music-text': 'Musica, percezione ed espressione: studi, repertorio e riflessioni sull’ascoltare e sul suonare.',
+        'curiosities-title': 'Curiosità',
+        'curiosities-text': 'Scienza, universo, storia e tutto ciò che suscita domande, in testi brevi e accessibili.',
+        'suggest-title': 'Suggerisci un tema',
+        'suggest-text': 'Hai un’idea, una domanda o un argomento interessante? Invia un suggerimento.',
+        footer: 'FRANCHESCA LEMOS CAPPELLESSO · SPAZIO PERSONALE',
+        robot: 'Robottino che scrive al portatile'
+      }
+    };
+
+    var codigoHtml = { en: 'en', pt: 'pt-BR', it: 'it' };
+
+    function mudarIdioma(idioma) {
+      var t = textos[idioma];
+
+      document.documentElement.lang = codigoHtml[idioma];
+
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        el.textContent = t[el.getAttribute('data-i18n')];
+      });
+
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        el.setAttribute('aria-label', t[el.getAttribute('data-i18n-aria')]);
+      });
+
+      document.querySelectorAll('.lang button').forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-lang') === idioma);
+      });
+
+      // Guarda a escolha e deixa o endereço pronto para compartilhar
+      // (por exemplo, ...github.io/?lang=it).
+      try { localStorage.setItem('idioma', idioma); } catch (e) {}
+      var url = idioma === 'en' ? location.pathname : location.pathname + '?lang=' + idioma;
+      history.replaceState(null, '', url);
+    }
+
+    document.querySelectorAll('.lang button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        mudarIdioma(b.getAttribute('data-lang'));
+      });
+    });
+
+    // Idioma inicial: o do endereço (?lang=pt), senão o último escolhido,
+    // senão o inglês.
+    var pedido = new URLSearchParams(location.search).get('lang');
+    var salvo = null;
+    try { salvo = localStorage.getItem('idioma'); } catch (e) {}
+    mudarIdioma(textos[pedido] ? pedido : (textos[salvo] ? salvo : 'en'));
+  </script>
 </body>
 </html>
