@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="pt-BR" data-idioma="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Você sabia? · Franchesca Lemos Cappellesso</title>
+  <meta name="description" content="Quarenta e seis degraus da matemática, da olimpíada escolar aos Problemas do Milênio.">
+
+  <link rel="stylesheet" href="did-you-know.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <a class="name" href="index.html?lang=pt">← voltar</a>
+      <nav class="langs">
+        <a href="did-you-know.html">EN</a>
+        <a href="voce-sabia.html" aria-current="page">PT</a>
+        <a href="lo-sapevi.html">IT</a>
+      </nav>
+    </header>
+
+    <!-- Abertura, com a escada desenhada -->
+    <div class="hero">
+      <div>
+        <p class="eyebrow">💡 Matemática · Você sabia?</p>
+        <h1>Quarenta e seis degraus até o <em>quase impossível.</em></h1>
+        <p class="lead">
+          Existe uma escada invisível na matemática. Ela começa numa prova feita
+          em milhares de escolas públicas brasileiras e termina em sete problemas
+          que valem um milhão de dólares cada. Suba com calma: cada degrau
+          esconde uma história verdadeira.
+        </p>
+        <div class="hook">
+          <span>🏆</span>
+          <span>
+            Um desses prêmios só foi conquistado por uma pessoa no mundo. E ela
+            recusou o dinheiro.
+            <a href="#nivel5">Descobrir quem →</a>
+          </span>
+        </div>
+      </div>
+
+      <!-- Cada degrau é um link para a seção correspondente -->
+      <svg class="stair" viewBox="0 0 380 300" role="img"
+           aria-label="Uma escada de cinco degraus, com uma estrela no topo">
+        <a href="#nivel1">
+          <rect x="10"  y="240" width="360" height="50" rx="8" fill="rgba(255,255,255,.12)"/>
+          <text x="24" y="270" fill="#fff" font-size="12">1 · Onde tudo começa</text>
+        </a>
+        <a href="#nivel2">
+          <rect x="80"  y="186" width="290" height="50" rx="8" fill="rgba(255,255,255,.16)"/>
+          <text x="94" y="216" fill="#fff" font-size="12">2 · A primeira tese</text>
+        </a>
+        <a href="#nivel3">
+          <rect x="150" y="132" width="220" height="50" rx="8" fill="rgba(255,255,255,.2)"/>
+          <text x="164" y="162" fill="#fff" font-size="12">3 · Uma carreira</text>
+        </a>
+        <a href="#nivel4">
+          <rect x="220" y="78"  width="150" height="50" rx="8" fill="rgba(255,255,255,.26)"/>
+          <text x="234" y="108" fill="#fff" font-size="12">4 · O topo</text>
+        </a>
+        <a href="#nivel5">
+          <rect x="290" y="64"  width="80"  height="10" rx="4" fill="#f4c96b"/>
+        </a>
+        <g class="star">
+          <path d="M334 14 l6 13 14 2 -10 10 2 14 -12-7 -12 7 2-14 -10-10 14-2z"
+                fill="#f4c96b"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Números que contam até o valor final -->
+    <div class="counters">
+      <div class="counter"><b data-conta="46">0</b><span>prêmios e honrarias</span></div>
+      <div class="counter"><b data-conta="6">0</b><span>problemas de US$ 1 milhão ainda em aberto</span></div>
+      <div class="counter"><b data-conta="1">0</b><span>pessoa resolveu um deles</span></div>
+    </div>
+
+    <section id="quiz">
+      <div class="level">
+        <div class="level-num">?</div>
+        <div>
+          <div class="kicker">Antes de subir</div>
+          <h2>Verdade ou mito?</h2>
+          <p class="sub">Arrisque um palpite. As respostas estão espalhadas pela escada.</p>
+        </div>
+      </div>
+      <div class="quiz" id="quiz-list"></div>
+    </section>
+
+    <nav class="steps-nav" id="steps-nav">
+      <a href="#nivel1">1 · Começo</a>
+      <a href="#nivel2">2 · Tese</a>
+      <a href="#nivel3">3 · Carreira</a>
+      <a href="#nivel4">4 · Topo</a>
+      <a href="#nivel5">5 · Milênio</a>
+      <a href="#mapa">Mapa</a>
+      <a href="#nobel">Nobel</a>
+    </nav>
+
+    <section id="nivel1">
+      <div class="level">
+        <div class="level-num">1</div>
+        <div>
+          <div class="kicker">Degrau 1 · a base</div>
+          <h2>Onde tudo começa</h2>
+          <p class="sub">Prêmios que existem para encontrar talento onde ninguém estava olhando.</p>
+        </div>
+      </div>
+      <div class="grid" data-nivel="1"></div>
+
+      <details class="sabia">
+        <summary><span class="bulb">💡</span> Da olimpíada da escola à Medalha Fields</summary>
+        <div class="inside">
+          <p>
+            Artur Avila começou nas olimpíadas de matemática ainda na escola, no Rio de Janeiro. Em 1995, aos 16 anos, ganhou a medalha de ouro na Olimpíada Internacional de Matemática.
+          </p>
+          <p>
+            Ainda aluno do ensino médio, e sem ter entrado numa faculdade, concluiu o mestrado no IMPA. Doutorou-se lá mesmo, em 2001. Em 2014, recebeu a Medalha Fields: o primeiro latino-americano a conquistá-la.
+          </p>
+          <p class="fonte">🔗 Fonte oficial: <a href="https://www.obm.org.br" target="_blank" rel="noopener noreferrer">Olimpíada Brasileira de Matemática</a> · <a href="https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2014" target="_blank" rel="noopener noreferrer">IMU · Medalhas Fields de 2014</a></p>
+        </div>
+      </details>
+    </section>
+
+    <section id="nivel2">
+      <div class="level">
+        <div class="level-num">2</div>
+        <div>
+          <div class="kicker">Degrau 2 · primeiras pesquisas</div>
+          <h2>A primeira tese</h2>
+          <p class="sub">Aqui já não basta resolver problemas difíceis: é preciso criar matemática que ainda não existia.</p>
+        </div>
+      </div>
+      <div class="grid" data-nivel="2"></div>
+
+      <details class="sabia">
+        <summary><span class="bulb">💡</span> A tese de 27 páginas que virou um Nobel</summary>
+        <div class="inside">
+          <p>
+            Em 1950, John Nash defendeu em Princeton uma tese de doutorado curtíssima, com cerca de 27 páginas, chamada <em>Non-cooperative games</em>. Nela aparecia pela primeira vez a ideia que hoje leva o nome dele: o Equilíbrio de Nash.
+          </p>
+          <p>
+            Quarenta e quatro anos depois, em 1994, essas ideias lhe renderam o Nobel de Economia, pela análise pioneira dos equilíbrios na teoria dos jogos não cooperativos.
+          </p>
+          <p class="fonte">🔗 Fonte oficial: <a href="https://www.nobelprize.org/prizes/economic-sciences/1994/nash/facts/" target="_blank" rel="noopener noreferrer">Prêmio Nobel · John Nash</a></p>
+        </div>
+      </details>
+    </section>
+
+    <section id="nivel3">
+      <div class="level">
+        <div class="level-num">3</div>
+        <div>
+          <div class="kicker">Degrau 3 · uma vida de trabalho</div>
+          <h2>Reconhecimento de carreira</h2>
+          <p class="sub">Não se ganha por um resultado, mas por décadas deles.</p>
+        </div>
+      </div>
+      <div class="grid" data-nivel="3"></div>
+
+      <details class="sabia">
+        <summary><span class="bulb">💡</span> O brasileiro que presidiu a matemática mundial</summary>
+        <div class="inside">
+          <p>
+            Jacob Palis, pesquisador do IMPA, foi secretário-geral da União Matemática Internacional de 1991 a 1998 e, em seguida, seu presidente, de 1999 a 2002. É essa a entidade que concede, entre outras, a Medalha Fields.
+          </p>
+          <p>
+            Em 2010, recebeu o Prêmio Balzan de Matemática por suas contribuições fundamentais à teoria dos sistemas dinâmicos.
+          </p>
+          <p class="fonte">🔗 Fonte oficial: <a href="https://www.balzan.org/en/prizewinners/jacob-palis/bio-bibliography" target="_blank" rel="noopener noreferrer">Fundação Balzan · Jacob Palis</a></p>
+        </div>
+      </details>
+    </section>
+
+    <section id="nivel4">
+      <div class="level">
+        <div class="level-num">4</div>
+        <div>
+          <div class="kicker">Degrau 4 · pouquíssimas pessoas por década</div>
+          <h2>O topo do mundo</h2>
+          <p class="sub">A partir daqui, os nomes cabem numa folha de papel.</p>
+        </div>
+      </div>
+      <div class="grid" data-nivel="4"></div>
+
+      <details class="sabia">
+        <summary><span class="bulb">💡</span> Por que não existe um Nobel de Matemática?</summary>
+        <div class="inside">
+          <p>
+            No testamento de 1895, Alfred Nobel criou cinco prêmios: Física,
+            Química, Medicina, Literatura e Paz. A matemática ficou de fora, e
+            ele nunca explicou por quê.
+          </p>
+          <p>
+            A explicação mais famosa é uma lenda: Nobel teria deixado a
+            matemática de fora por causa de uma rivalidade com um matemático.
+            Muita gente acredita nela, mas nunca apareceu um documento que a
+            confirme. Há outras hipóteses, como a de que já existia na Suécia um
+            prêmio de matemática. O mistério continua, e é curioso, porque a
+            matemática está por trás de quase todas as áreas que ele premiou.
+          </p>
+          <p>
+            Outra curiosidade: a Medalha Fields paga cerca de quinze mil dólares
+            canadenses, centenas de vezes menos que o Breakthrough. Ainda assim,
+            é a que todo matemático sonha em receber.
+          </p>
+          <p class="fonte">🔗 Fonte oficial: <a href="https://www.nobelprize.org/alfred-nobel/alfred-nobels-will/" target="_blank" rel="noopener noreferrer">Prêmio Nobel · o testamento</a></p>
+        </div>
+      </details>
+
+      <details class="sabia">
+        <summary><span class="bulb">💡</span> A carta que chegou tarde demais</summary>
+        <div class="inside">
+          <p>
+            O norueguês Niels Henrik Abel morreu de tuberculose em 6 de abril de 1829, aos 26 anos, depois de anos de dificuldades para conseguir um emprego fixo.
+          </p>
+          <p>
+            Dois dias depois, em 8 de abril, um amigo escreveu de Berlim, sem saber do que tinha acontecido, para avisar que um cargo permanente estava garantido. Em 2002, o governo da Noruega criou em sua homenagem o Prêmio Abel, entregue pela primeira vez em 2003.
+          </p>
+          <p class="fonte">🔗 Fonte oficial: <a href="https://abelprize.no/page/biography-niels-henrik-abel-his-last-years" target="_blank" rel="noopener noreferrer">Prêmio Abel · os últimos anos de Abel</a></p>
+        </div>
+      </details>
+    </section>
+
+    <section id="nivel5">
+      <div class="millennium">
+        <div class="level">
+          <div class="level-num">5</div>
+          <div>
+            <div class="kicker" style="color: var(--gold-light)">Degrau 5 · prêmio nº 19</div>
+            <h2>Os Problemas do Milênio</h2>
+            <p class="sub">
+              No ano 2000, o Clay Mathematics Institute escolheu sete problemas
+              em aberto e ofereceu um milhão de dólares por cada solução. Seis
+              continuam trancados, e cada um leva à sua página oficial. Um
+              deles brilha. Clique nele.
+            </p>
+          </div>
+        </div>
+
+        <div class="problems">
+          <a class="problem" href="https://www.claymath.org/millennium/p-vs-np/" target="_blank" rel="noopener noreferrer"><small>🔒 em aberto</small>P versus NP<span class="clay">página oficial ↗</span></a>
+          <a class="problem" href="https://www.claymath.org/millennium/hodge-conjecture/" target="_blank" rel="noopener noreferrer"><small>🔒 em aberto</small>Conjectura de Hodge<span class="clay">página oficial ↗</span></a>
+          <a class="problem" href="https://www.claymath.org/millennium/riemann-hypothesis/" target="_blank" rel="noopener noreferrer"><small>🔒 em aberto</small>Hipótese de Riemann<span class="clay">página oficial ↗</span></a>
+          <a class="problem" href="https://www.claymath.org/millennium/yang-mills-the-maths-gap/" target="_blank" rel="noopener noreferrer"><small>🔒 em aberto</small>Existência de Yang–Mills e lacuna de massa<span class="clay">página oficial ↗</span></a>
+          <a class="problem" href="https://www.claymath.org/millennium/navier-stokes-equation/" target="_blank" rel="noopener noreferrer"><small>🔒 em aberto</small>Existência e regularidade de Navier–Stokes<span class="clay">página oficial ↗</span></a>
+          <a class="problem" href="https://www.claymath.org/millennium/birch-and-swinnerton-dyer-conjecture/" target="_blank" rel="noopener noreferrer"><small>🔒 em aberto</small>Conjectura de Birch e Swinnerton-Dyer<span class="clay">página oficial ↗</span></a>
+          <button class="problem solved" id="poincare" aria-expanded="false">
+            <small>✦ resolvido · clique</small>Conjectura de Poincaré
+          </button>
+        </div>
+
+        <div class="story" id="story">
+          <p>
+            A Conjectura de Poincaré fala sobre a forma do espaço
+            tridimensional. Foi resolvida pelo russo
+            <b>Grigori Perelman</b>, que publicou a demonstração na internet,
+            em três textos, sem submetê-la a nenhuma revista científica. Levou
+            alguns anos para que a comunidade confirmasse que estava correta.
+          </p>
+          <p>
+            Perelman <b>recusou o milhão de dólares</b>. Antes disso, já havia
+            recusado a Medalha Fields, e, em 1996, o prêmio da Sociedade
+            Europeia de Matemática. Declarou que a contribuição de Richard
+            Hamilton, que criou as ferramentas usadas na solução, não era menor
+            que a sua, e que receber a glória sozinho lhe parecia injusto.
+          </p>
+          <p class="fonte">🔗 Fonte oficial: <a href="https://www.claymath.org/millennium/poincare-conjecture/" target="_blank" rel="noopener noreferrer">Clay Mathematics Institute</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mapa">
+      <div class="level">
+        <div class="level-num">✦</div>
+        <div>
+          <div class="kicker">Fora da escada principal</div>
+          <h2>Prêmios para quem cava fundo</h2>
+          <p class="sub">Um circuito paralelo: excelência numa única área, ou numa única fase da carreira.</p>
+        </div>
+      </div>
+      <div class="grid" data-nivel="especialidade"></div>
+
+      <details class="sabia">
+        <summary><span class="bulb">💡</span> O caderno perdido de Ramanujan</summary>
+        <div class="inside">
+          <p>
+            Em 1913, o indiano Srinivasa Ramanujan, sem diploma universitário, mandou ao matemático G. H. Hardy, em Cambridge, uma carta cheia de fórmulas. Hardy o levou para a Inglaterra no ano seguinte. Ramanujan morreu em 1920, aos 32 anos.
+          </p>
+          <p>
+            Em 1976, o matemático George Andrews encontrou, numa caixa de papéis guardada na biblioteca do Trinity College, em Cambridge, folhas escritas por Ramanujan no último ano de vida. Elas ficaram conhecidas como o "caderno perdido" e ainda inspiram pesquisas.
+          </p>
+          <p class="fonte">🔗 Fonte oficial: <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Ramanujan/" target="_blank" rel="noopener noreferrer">MacTutor, Universidade de St Andrews</a></p>
+        </div>
+      </details>
+    </section>
+
+    <section>
+      <div class="level">
+        <div class="level-num">✦</div>
+        <div>
+          <div class="kicker">As sociedades científicas</div>
+          <h2>Quando os pares decidem</h2>
+          <p class="sub">Não dão fortuna. Dão algo que não se compra: a aprovação de quem entende do assunto.</p>
+        </div>
+      </div>
+      <div class="grid" data-nivel="sociedades"></div>
+
+      <details class="sabia">
+        <summary><span class="bulb">💡</span> Quantas mulheres já ganharam a Medalha Fields?</summary>
+        <div class="inside">
+          <p>
+            Duas, em quase noventa anos. A iraniana <b>Maryam Mirzakhani</b> foi
+            a primeira, em 2014, pelo estudo da geometria de superfícies; morreu
+            três anos depois, aos 40. A ucraniana <b>Maryna Viazovska</b> foi a
+            segunda, em 2022, por resolver o problema do empacotamento de esferas
+            em dimensão oito, uma pergunta que, em dimensão três, ficou em aberto
+            por séculos.
+          </p>
+          <p>
+            Em homenagem a Mirzakhani, o Breakthrough criou um prêmio para
+            matemáticas que defenderam o doutorado há pouco tempo: o Maryam
+            Mirzakhani New Frontiers Prize.
+          </p>
+          <p class="fonte">🔗 Fonte oficial: <a href="https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2014" target="_blank" rel="noopener noreferrer">IMU · Medalhas Fields de 2014</a> · <a href="https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2022" target="_blank" rel="noopener noreferrer">IMU · Medalhas Fields de 2022</a></p>
+        </div>
+      </details>
+    </section>
+
+    <section>
+      <div class="level">
+        <div class="level-num">✦</div>
+        <div>
+          <div class="kicker">Brasil</div>
+          <h2>Reconhecimentos brasileiros</h2>
+          <p class="sub">Inclui os que não são só da matemática, mas aparecem no currículo de quem pesquisa no país.</p>
+        </div>
+      </div>
+      <div class="grid" data-nivel="brasil"></div>
+
+      <details class="sabia">
+        <summary><span class="bulb">💡</span> A Medalha Fields que sumiu no Rio</summary>
+        <div class="inside">
+          <p>
+            Em 2018, o Rio de Janeiro recebeu o Congresso Internacional de Matemáticos, o primeiro realizado na América Latina e no Hemisfério Sul.
+          </p>
+          <p>
+            Na cerimônia de abertura, o curdo Caucher Birkar recebeu a Medalha Fields. Minutos depois, a pasta em que ele a tinha guardado sumiu. A pasta foi encontrada, mas sem a medalha. Os organizadores tinham uma medalha reserva, e dias depois Birkar recebeu outra, idêntica.
+          </p>
+          <p class="fonte">🔗 Fonte oficial: <a href="https://www.mathunion.org/fileadmin/IMU/ICM2018/static_site/portal/welcome-message.html" target="_blank" rel="noopener noreferrer">IMU · ICM 2018</a> · <a href="https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2018" target="_blank" rel="noopener noreferrer">IMU · Medalhas Fields de 2018</a></p>
+        </div>
+      </details>
+    </section>
+
+    <section id="vitrine">
+      <div class="level">
+        <div class="level-num">✦</div>
+        <div>
+          <div class="kicker">Fora da vitrine</div>
+          <h2>Não são prêmios, mas valem ouro</h2>
+          <p class="sub">Convites, títulos e bolsas que a comunidade lê exatamente como lê uma medalha.</p>
+        </div>
+      </div>
+      <div class="grid" data-nivel="vitrine"></div>
+
+      <details class="sabia">
+        <summary><span class="bulb">💡</span> A palestra mais famosa da história da matemática</summary>
+        <div class="inside">
+          <p>
+            Em 1900, no Congresso Internacional de Matemáticos em Paris, David
+            Hilbert fez algo incomum: em vez de apresentar resultados, apresentou
+            problemas em aberto. A lista publicada tinha vinte e três questões, e
+            elas orientaram boa parte da pesquisa matemática do século XX.
+          </p>
+          <p>
+            Os Problemas do Milênio, cem anos depois, foram inspirados nessa
+            lista. A Hipótese de Riemann aparece nas duas.
+          </p>
+          <p class="fonte">🔗 Fonte oficial: <a href="https://www.claymath.org/millennium-problems/" target="_blank" rel="noopener noreferrer">Clay Mathematics Institute</a></p>
+        </div>
+      </details>
+    </section>
+
+    <section id="nobel">
+      <div class="level">
+        <div class="level-num">✦</div>
+        <div>
+          <div class="kicker">Não existe Nobel de Matemática, mas…</div>
+          <h2>Quando o matemático ganha o prêmio dos outros</h2>
+        </div>
+      </div>
+
+      <div class="people">
+        <div class="person">
+          <div class="who">Nobel de Economia · 1994</div>
+          <h3>John Nash</h3>
+          <p>Matemático puro, ficou famoso pelo filme <em>Uma Mente Brilhante</em>. Ganhou o Nobel pela teoria dos jogos, com o Equilíbrio de Nash.</p>
+        </div>
+        <div class="person">
+          <div class="who">Nobel de Literatura · 1950</div>
+          <h3>Bertrand Russell</h3>
+          <p>Um dos maiores lógicos do século XX e coautor dos <em>Principia Mathematica</em>. Recebeu o Nobel por seus escritos filosóficos e humanitários.</p>
+        </div>
+        <div class="person">
+          <div class="who">Nobel de Química · 1985</div>
+          <h3>Herbert Hauptman</h3>
+          <p>Matemático, criou métodos para descobrir a estrutura tridimensional de cristais por raios X, com grande impacto na química e na farmacologia.</p>
+        </div>
+        <div class="person">
+          <div class="who">Wall Street</div>
+          <h3>James Simons</h3>
+          <p>Geômetra, coautor da teoria de Chern–Simons. Fundou a Renaissance Technologies e foi um dos pioneiros do investimento quantitativo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="level">
+        <div class="level-num">→</div>
+        <div>
+          <div class="kicker">Quer ir mais fundo?</div>
+          <h2>Duas portas no GitHub</h2>
+        </div>
+      </div>
+
+      <div class="invite">
+        <a class="door" href="https://github.com/fcappellesso/math-did-you-know/blob/main/TESES.pt-BR.md">
+          <span class="big">📚</span>
+          <h3>49 fontes oficiais de teses</h3>
+          <p>Onde ler dissertações e teses de graça e dentro da lei, no Brasil e no mundo.</p>
+          <span class="go">Abrir →</span>
+        </a>
+        <a class="door" href="https://github.com/fcappellesso/math-did-you-know/blob/main/README.pt-BR.md#onde-os-matemáticos-leem-perguntam-e-publicam">
+          <span class="big">🧭</span>
+          <h3>Onde os matemáticos leem, perguntam e publicam</h3>
+          <p>Revistas, comunidades e sites usados por quem pesquisa matemática.</p>
+          <span class="go">Abrir →</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <a href="index.html?lang=pt">← VOLTAR</a>
+      &nbsp;·&nbsp;
+      <a class="github" href="https://github.com/fcappellesso">SEGUIR NO GITHUB →</a>
+    </footer>
+
+  </div>
+
+  <script>
+    // Os prêmios ficam nesta lista; cada um vira um cartão na seção do seu
+    // nível. "brilha: true" dá o destaque dourado.
+    var premios = [
+      { n: 1, nivel: '1', nome: 'OBMEP', onde: 'Brasil',
+        texto: 'A Olimpíada Brasileira de Matemática das Escolas Públicas é a maior competição do país. Premia milhares de estudantes por ano com medalhas e bolsas de iniciação científica. Para muitos, é o primeiro contato com a ideia de que matemática pode ser uma profissão.' },
+      { n: 2, nivel: '1', nome: 'OBM', onde: 'Brasil',
+        texto: 'Mais antiga e mais seletiva, aberta a escolas públicas e privadas. É dela que saem os estudantes que representam o Brasil nas competições internacionais.' },
+      { n: 3, nivel: '1', nome: 'Prêmio Brasil de Ensino de Matemática', onde: 'Brasil',
+        texto: 'Criado pelo IMPA e pela ANPMat, reconhece não o aluno, mas quem ensina: as melhores práticas de professores da educação básica.' },
+
+      { n: 4, nivel: '2', nome: 'Prêmio Capes de Tese', onde: 'Brasil',
+        texto: 'Escolhe a melhor tese de doutorado defendida no país a cada ano, na área de Matemática, Probabilidade e Estatística.' },
+      { n: 5, nivel: '2', nome: 'Prêmio SBM', onde: 'Brasil',
+        texto: 'Concedido pela Sociedade Brasileira de Matemática ao melhor artigo original de pesquisa publicado recentemente por um jovem pesquisador residente no Brasil.' },
+      { n: 6, nivel: '2', nome: 'Prêmio Ramanujan (ICTP)', onde: 'Internacional',
+        texto: 'Para jovens pesquisadores de países em desenvolvimento. Ramanujan, indiano autodidata, mandou a Cambridge cartas com fórmulas tão estranhas que os matemáticos não sabiam se eram genialidade ou fraude. Eram genialidade.' },
+      { n: 7, nivel: '2', nome: 'Prêmio Gutierrez', onde: 'Brasil',
+        texto: 'Organizado pela SBM e pelo ICMC-USP, premia a melhor tese de doutorado em matemática defendida no Brasil. Homenageia o pesquisador peruano Carlos Teobaldo Gutierrez Vidalon (1944–2008).' },
+
+      { n: 8, nivel: '3', nome: 'Ordem Nacional do Mérito Científico', onde: 'Brasil',
+        texto: 'Honraria concedida pelo Estado brasileiro a cientistas com contribuições notáveis à ciência do país.' },
+      { n: 9, nivel: '3', nome: 'Prêmio Almirante Álvaro Alberto', onde: 'Brasil',
+        texto: 'Um dos maiores prêmios científicos brasileiros, concedido pelo conjunto da obra.' },
+      { n: 10, nivel: '3', nome: 'Academia Brasileira de Ciências', onde: 'Brasil',
+        texto: 'Tornar-se membro titular não dá dinheiro algum. Dá algo mais raro: o reconhecimento vitalício dos próprios pares.' },
+      { n: 11, nivel: '3', nome: 'Prêmios de pesquisa do IMPA', onde: 'Brasil',
+        texto: 'Concedidos pelo Instituto de Matemática Pura e Aplicada, no Rio de Janeiro, a trabalhos de altíssima relevância.' },
+
+      { n: 12, nivel: '4', nome: 'Prêmio da EMS', onde: 'Europa',
+        texto: 'A Sociedade Europeia de Matemática premia, a cada quatro anos, pesquisadores com menos de 35 anos. Em 1996, Grigori Perelman recusou esse prêmio, a primeira de várias recusas.' },
+      { n: 13, nivel: '4', nome: 'Prêmio Cole (AMS)', onde: 'Estados Unidos',
+        texto: 'Da Sociedade Americana de Matemática, para contribuições extraordinárias em álgebra ou em teoria dos números.' },
+      { n: 14, nivel: '4', nome: 'Breakthrough Prize', onde: 'Internacional',
+        texto: 'Paga três milhões de dólares, o maior valor da área. É também o mais novo dos grandes prêmios, e mostra que, na matemática, dinheiro nunca foi a principal medida de prestígio.' },
+      { n: 15, nivel: '4', nome: 'Prêmio Wolf', onde: 'Israel',
+        texto: 'Frequentemente descrito como um dos prêmios de carreira mais prestigiados do mundo.' },
+      { n: 16, nivel: '4', nome: 'Medalha Chern', onde: 'Internacional',
+        texto: 'Entregue a cada quatro anos a quem dedicou a vida inteira à matemática, sem limite de idade.' },
+      { n: 17, nivel: '4', nome: 'Prêmio Abel', onde: 'Noruega', brilha: true,
+        texto: 'Entregue pelo Rei da Noruega, é o mais próximo que existe de um Nobel de matemática: premia a carreira inteira, com valor comparável ao do Nobel.' },
+      { n: 18, nivel: '4', nome: 'Medalha Fields', onde: 'Internacional', brilha: true, largo: true,
+        texto: 'A mais prestigiada de todas. A cada quatro anos, no máximo quatro pesquisadores, todos com até 40 anos. O brasileiro Artur Avila a venceu em 2014, o primeiro latino-americano a conseguir.' },
+
+      { n: 20, nivel: 'especialidade', nome: 'Prêmio Salem', onde: 'Internacional',
+        texto: 'Para jovens pesquisadores em análise harmônica e áreas próximas. Pequeno em dinheiro, enorme em prestígio: vários ganhadores receberam depois a Medalha Fields.' },
+      { n: 21, nivel: 'especialidade', nome: 'Prêmio Ostrowski', onde: 'Internacional',
+        texto: 'A cada dois anos, para uma realização excepcional em matemática pura ou nos fundamentos da análise numérica.' },
+      { n: 22, nivel: 'especialidade', nome: 'Medalha Abacus (IMU)', onde: 'Internacional',
+        texto: 'Para os aspectos matemáticos da ciência da informação, com o mesmo limite de idade da Fields. Entregue pela primeira vez em 2022, substituiu o Prêmio Nevanlinna.' },
+      { n: 23, nivel: 'especialidade', nome: 'Prêmio Gauss (IMU)', onde: 'Internacional',
+        texto: 'Premia a matemática que vazou para fora da matemática: pesquisa cujo impacto aparece na tecnologia, nos negócios ou na vida cotidiana. Existe desde 2006.' },
+      { n: 24, nivel: 'especialidade', nome: 'Prêmio Leelavati', onde: 'Internacional',
+        texto: 'Não premia pesquisa: reconhece quem aproxima a matemática do público. É entregue no encerramento do Congresso Internacional de Matemáticos.' },
+      { n: 25, nivel: 'especialidade', nome: 'Prêmio Shaw em Ciências Matemáticas', onde: 'Hong Kong',
+        texto: 'Anual desde 2004, paga 1,2 milhão de dólares. É um dos poucos prêmios de altíssimo valor entregues todo ano, e não a cada quatro.' },
+      { n: 26, nivel: 'especialidade', nome: 'Prêmio Crafoord', onde: 'Suécia',
+        texto: 'Criado pela Academia Real Sueca de Ciências para cobrir áreas que o Nobel deixou de fora. A matemática entra num rodízio com outras ciências.' },
+      { n: 27, nivel: 'especialidade', nome: 'Prêmio Kyoto', onde: 'Japão',
+        texto: 'Na categoria de Ciências Básicas, a matemática se alterna com a física, a biologia e as ciências da Terra. Um dos prêmios mais generosos do mundo.' },
+      { n: 28, nivel: 'especialidade', nome: 'SASTRA Ramanujan Prize', onde: 'Índia', brilha: true,
+        texto: 'Para pesquisadores de até 32 anos. O limite não é aleatório: é a idade com que Ramanujan morreu.' },
+      { n: 29, nivel: 'especialidade', nome: 'Medalha De Morgan', onde: 'Reino Unido',
+        texto: 'A maior honraria da London Mathematical Society, entregue a cada três anos pelo conjunto da contribuição à matemática.' },
+
+      { n: 30, nivel: 'sociedades', nome: 'Prêmios Steele (AMS)', onde: 'Estados Unidos',
+        texto: 'Três de uma vez: um pelo conjunto da obra, um por uma contribuição que mudou uma área e, raridade entre prêmios científicos, um para quem escreve bem sobre matemática.' },
+      { n: 31, nivel: 'sociedades', nome: 'Prêmio Bôcher', onde: 'Estados Unidos',
+        texto: 'Da Sociedade Americana de Matemática, a cada três anos, para trabalhos notáveis em análise.' },
+      { n: 32, nivel: 'sociedades', nome: 'Prêmio Veblen', onde: 'Estados Unidos',
+        texto: 'O equivalente do Bôcher para geometria e topologia.' },
+      { n: 33, nivel: 'sociedades', nome: 'Prêmio Ruth Lyttle Satter', onde: 'Estados Unidos',
+        texto: 'Reconhece, a cada dois anos, uma contribuição excepcional em pesquisa feita por uma mulher.' },
+      { n: 34, nivel: 'sociedades', nome: 'Palestra Emmy Noether', onde: 'Internacional', brilha: true,
+        texto: 'Não é medalha nem cheque: é um convite para falar. Leva o nome de quem passou anos dando aulas sem salário por ser mulher.' },
+
+      { n: 35, nivel: 'brasil', nome: 'Bolsa de Produtividade (CNPq)', onde: 'Brasil',
+        texto: 'A famosa "bolsa PQ". Não é prêmio, é financiamento, mas funciona como um selo de qualidade dado pelo CNPq.' },
+      { n: 36, nivel: 'brasil', nome: 'Prêmio Jovem Cientista (CNPq)', onde: 'Brasil',
+        texto: 'Premia trabalhos de estudantes e jovens pesquisadores em torno de um tema diferente a cada edição.' },
+      { n: 37, nivel: 'brasil', nome: 'Para Mulheres na Ciência', onde: 'Brasil',
+        texto: 'Programa da L\'Oréal com a UNESCO e a Academia Brasileira de Ciências, com bolsas para jovens cientistas brasileiras, inclusive em matemática.' },
+      { n: 38, nivel: 'brasil', nome: 'Prêmio Mercosul de Ciência e Tecnologia', onde: 'América do Sul',
+        texto: 'Reúne pesquisadores dos países do bloco, da iniciação científica ao pesquisador sênior.' },
+      { n: 39, nivel: 'brasil', nome: 'Prêmio TWAS', onde: 'Internacional',
+        texto: 'Da Academia Mundial de Ciências, para quem pesquisa em países em desenvolvimento. A matemática tem categoria própria.' },
+
+      { n: 40, nivel: 'vitrine', nome: 'Palestrante no ICM', onde: 'Internacional',
+        texto: 'Ser convidado a falar no Congresso Internacional de Matemáticos, a cada quatro anos, é uma das maiores distinções da profissão.' },
+      { n: 41, nivel: 'vitrine', nome: 'Membro de academias e sociedades', onde: 'Internacional',
+        texto: 'Fellow da American Mathematical Society, membro da Royal Society ou da Academia Nacional de Ciências dos EUA: títulos vitalícios, decididos pelos pares.' },
+      { n: 42, nivel: 'vitrine', nome: 'Clay Research Fellowship e Award', onde: 'Internacional',
+        texto: 'Do mesmo instituto dos Problemas do Milênio. A bolsa dá anos de liberdade a quem acabou de se doutorar; o prêmio reconhece avanços recentes.' },
+      { n: 43, nivel: 'vitrine', nome: 'Sloan Research Fellowship', onde: 'Estados Unidos',
+        texto: 'Para pesquisadores em início de carreira apontados como as promessas da geração.' },
+      { n: 44, nivel: 'vitrine', nome: 'ERC Grant', onde: 'Europa',
+        texto: 'Os financiamentos do Conselho Europeu de Pesquisa estão entre os mais disputados do mundo e sustentam grupos inteiros por anos.' },
+      { n: 45, nivel: 'vitrine', nome: 'Guggenheim Fellowship', onde: 'Estados Unidos',
+        texto: 'Bolsa para quem já demonstrou realizações excepcionais, da matemática às artes.' },
+      { n: 46, nivel: 'vitrine', nome: 'MacArthur Fellowship', onde: 'Estados Unidos', brilha: true,
+        texto: 'A "bolsa dos gênios". Ninguém pode se candidatar: as indicações são confidenciais, e a pessoa só fica sabendo quando recebe o telefonema avisando que ganhou.' }
+    ];
+
+    // Verdade ou mito
+    var perguntas = [
+      { frase: 'O testamento de Alfred Nobel criou cinco prêmios, e nenhum deles é de matemática.',
+        verdade: true,
+        explica: 'Física, Química, Medicina, Literatura e Paz. Por que a matemática ficou de fora ninguém sabe ao certo: a resposta mais famosa é uma lenda.' },
+      { frase: 'Um brasileiro já ganhou a Medalha Fields.',
+        verdade: true,
+        explica: 'Artur Avila, em 2014: o primeiro latino-americano a recebê-la.' },
+      { frase: 'O prêmio que paga mais é também o mais prestigiado da matemática.',
+        verdade: false,
+        explica: 'O Breakthrough paga três milhões de dólares; a Fields, cerca de quinze mil dólares canadenses. E é a Fields que todo matemático sonha em receber.' },
+      { frase: 'Alguém já resolveu um dos Problemas do Milênio.',
+        verdade: true,
+        explica: 'Grigori Perelman resolveu a Conjectura de Poincaré, e recusou o milhão de dólares.' },
+      { frase: 'Existe um prêmio cujo limite de idade é a idade com que um matemático morreu.',
+        verdade: true,
+        explica: 'O SASTRA Ramanujan Prize vai até os 32 anos, a idade de Ramanujan quando morreu.' },
+      { frase: 'Para ganhar a "bolsa dos gênios" basta enviar uma boa candidatura.',
+        verdade: false,
+        explica: 'Na MacArthur Fellowship ninguém pode se candidatar: as indicações são confidenciais.' }
+    ];
+
+    var rotulos = {
+      verdade: 'Verdade', mito: 'Mito',
+      acertou: 'Acertou!', quase: 'Quase!',
+      eVerdade: 'É verdade.', eMito: 'É mito.'
+    };
+  </script>
+  <script src="did-you-know.js"></script>
+</body>
+</html>

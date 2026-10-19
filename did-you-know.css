@@ -1,0 +1,868 @@
+/* Estilo comum às três versões da página "Você sabia?"
+   (did-you-know.html, voce-sabia.html e lo-sapevi.html) */
+
+/* Mesma paleta Pérola da página inicial */
+:root {
+  --ink: #221d45;
+  --muted: #4b4570;
+  --soft: #6e6892;
+  --violet: #6a4fd6;
+  --gold: #b07d1e;
+  --gold-light: #f4c96b;
+  --dusk: #4b4388;
+  --border: rgba(92, 66, 190, .16);
+  --card: rgba(255, 255, 255, .78);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+
+  background:
+    radial-gradient(circle at 18% 12%, #e4dcff 0, transparent 30%),
+    radial-gradient(circle at 85% 40%, #ffe1d6 0, transparent 24%),
+    radial-gradient(circle at 15% 80%, #e9e2ff 0, transparent 26%),
+    linear-gradient(135deg, #fbfaff, #f4f0ff 48%, #fdf9f3);
+
+  overflow-x: hidden;
+}
+
+/* Grade em perspectiva, como na página inicial */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .35;
+
+  background-image:
+    linear-gradient(rgba(92,66,190,.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92,66,190,.12) 1px, transparent 1px);
+  background-size: 44px 44px;
+
+  transform: perspective(700px) rotateX(64deg) translateY(20%);
+  transform-origin: bottom;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  width: min(1080px, calc(100% - 32px));
+  margin: auto;
+  padding: 26px 0 60px;
+}
+
+a {
+  color: var(--violet);
+}
+
+/* Cabeçalho */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  padding-bottom: 22px;
+  font-family: Arial, sans-serif;
+}
+
+.name {
+  color: var(--ink);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.name:hover {
+  color: var(--gold);
+}
+
+/* Menu dos degraus, que acompanha a rolagem */
+
+.steps-nav {
+  position: sticky;
+  top: 10px;
+  z-index: 5;
+
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 10px;
+  padding: 6px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255,255,255,.82);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(75,67,136,.12);
+  scrollbar-width: none;
+}
+
+.steps-nav a {
+  flex: none;
+  padding: 7px 13px;
+  border-radius: 999px;
+
+  color: var(--muted);
+  font-family: Arial, sans-serif;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: background .25s, color .25s;
+}
+
+.steps-nav a:hover,
+.steps-nav a.ativo {
+  background: var(--dusk);
+  color: var(--gold-light);
+}
+
+/* Abertura */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 30px;
+
+  padding: clamp(30px, 5vw, 56px);
+
+  border: 1.5px solid rgba(75,67,136,.35);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(244,201,107,.25), transparent 40%),
+    linear-gradient(140deg, #2c2660, var(--dusk) 55%, #5a4a8f);
+  color: #fff;
+  box-shadow: 0 30px 70px rgba(75,67,136,.28);
+  overflow: hidden;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--gold-light);
+  font-family: Arial, sans-serif;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5.4vw, 3.9rem);
+  font-weight: 400;
+  line-height: 1.03;
+  letter-spacing: -.04em;
+}
+
+h1 em {
+  color: var(--gold-light);
+}
+
+.lead {
+  max-width: 540px;
+  margin: 22px 0 0;
+  color: rgba(255,255,255,.84);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.hook {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+
+  margin-top: 24px;
+  padding: 16px 18px;
+
+  border: 1px solid rgba(244,201,107,.45);
+  border-radius: 16px;
+  background: rgba(244,201,107,.1);
+
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.hook a {
+  color: var(--gold-light);
+  font-family: Arial, sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* A escada desenhada */
+
+.stair {
+  width: 100%;
+  max-width: 380px;
+  justify-self: center;
+}
+
+.stair a rect {
+  transition: fill .3s, transform .3s;
+}
+
+.stair a:hover rect {
+  fill: rgba(244,201,107,.55);
+}
+
+.stair text {
+  font-family: Arial, sans-serif;
+  pointer-events: none;
+}
+
+.star {
+  transform-origin: 334px 34px;
+  animation: brilho 2.8s ease-in-out infinite;
+}
+
+@keyframes brilho {
+  0%, 100% { opacity: .65; transform: scale(.9); }
+  50%      { opacity: 1;   transform: scale(1.15); }
+}
+
+/* Números que contam */
+
+.counters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.counter {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card);
+  text-align: center;
+}
+
+.counter b {
+  display: block;
+  color: var(--dusk);
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.counter span {
+  display: block;
+  margin-top: 8px;
+  color: var(--soft);
+  font-family: Arial, sans-serif;
+  font-size: .74rem;
+  letter-spacing: .06em;
+}
+
+/* Seções */
+
+section {
+  margin-top: clamp(50px, 8vw, 84px);
+  scroll-margin-top: 70px;
+}
+
+.level {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.level-num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+
+  border-radius: 18px;
+  background: linear-gradient(140deg, #3a3470, var(--dusk), #5a4a8f);
+  color: var(--gold-light);
+  box-shadow: 0 12px 26px rgba(75,67,136,.28);
+
+  font-size: 1.9rem;
+}
+
+.kicker {
+  color: var(--gold);
+  font-family: Arial, sans-serif;
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 4px 0 4px;
+  font-size: clamp(1.6rem, 3.8vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
+
+.sub {
+  margin: 0;
+  color: var(--soft);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+/* Cartões dos prêmios */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 14px;
+}
+
+.prize {
+  position: relative;
+  padding: 20px 20px 18px;
+
+  border: 1.5px solid rgba(75,67,136,.2);
+  border-radius: 18px;
+  background: var(--card);
+  box-shadow: 0 8px 22px rgba(75,67,136,.07);
+
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity .6s ease,
+    transform .6s ease,
+    border-color .25s,
+    box-shadow .25s;
+}
+
+.prize.visivel {
+  opacity: 1;
+  transform: none;
+}
+
+.prize:hover {
+  border-color: rgba(176,125,30,.55);
+  box-shadow: 0 16px 34px rgba(75,67,136,.16);
+}
+
+.prize-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.num {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  background: var(--dusk);
+  color: var(--gold-light);
+
+  font-family: Arial, sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.tag {
+  margin-left: auto;
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--soft);
+  font-family: Arial, sans-serif;
+  font-size: .6rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.prize h3 {
+  margin: 0 0 8px;
+  font-family: Arial, sans-serif;
+  font-size: .98rem;
+  line-height: 1.35;
+}
+
+.prize p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.62;
+}
+
+/* Destaque: o cartão da Fields e outros especiais */
+.prize.brilha {
+  border-color: rgba(176,125,30,.55);
+  background:
+    linear-gradient(150deg, rgba(244,201,107,.22), rgba(255,255,255,.85) 55%);
+}
+
+/* A Medalha Fields ocupa a linha inteira */
+.prize.largo {
+  grid-column: 1 / -1;
+}
+
+/* Caixas "Você sabia?" que abrem */
+
+details.sabia {
+  margin-top: 18px;
+  border: 1.5px dashed rgba(176,125,30,.55);
+  border-radius: 18px;
+  background: rgba(244,201,107,.1);
+}
+
+details.sabia summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  list-style: none;
+
+  color: var(--ink);
+  font-size: 1.08rem;
+}
+
+details.sabia summary::-webkit-details-marker {
+  display: none;
+}
+
+details.sabia summary::after {
+  content: "+";
+  margin-left: auto;
+  color: var(--gold);
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
+  transition: transform .3s;
+}
+
+details.sabia[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.bulb {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  font-size: 1rem;
+}
+
+details.sabia .inside {
+  padding: 0 20px 18px 66px;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+details.sabia .inside p {
+  margin: 0 0 10px;
+}
+
+/* Link para a fonte oficial, no fim de cada história */
+.fonte {
+  font-family: Arial, sans-serif;
+  font-size: .78rem;
+}
+
+.fonte a {
+  color: var(--dusk);
+  font-weight: 700;
+}
+
+.millennium .fonte a {
+  color: var(--gold-light);
+}
+
+/* Verdade ou mito? */
+
+.quiz {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.q {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  border: 1.5px solid rgba(75,67,136,.2);
+  border-radius: 18px;
+  background: var(--card);
+}
+
+.q p {
+  margin: 0 0 14px;
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.q .buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.q button {
+  flex: 1;
+  padding: 9px 10px;
+  border: 1.5px solid var(--dusk);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+
+  color: var(--dusk);
+  font-family: Arial, sans-serif;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+
+  transition: background .2s, color .2s;
+}
+
+.q button:hover {
+  background: var(--dusk);
+  color: #fff;
+}
+
+.q .answer {
+  display: none;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(75,67,136,.07);
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+.q.respondida .answer {
+  display: block;
+}
+
+.q.respondida button {
+  pointer-events: none;
+  opacity: .45;
+}
+
+.q.respondida button.escolhida {
+  opacity: 1;
+}
+
+.q .answer b.certo {
+  color: #2f7a4f;
+}
+
+.q .answer b.errado {
+  color: #a0442f;
+}
+
+/* Os sete problemas */
+
+.millennium {
+  padding: clamp(22px, 4vw, 38px);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(244,201,107,.2), transparent 40%),
+    linear-gradient(140deg, #2c2660, var(--dusk) 60%, #5a4a8f);
+  color: #fff;
+}
+
+.millennium .sub {
+  color: rgba(255,255,255,.8);
+}
+
+.problems {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.problem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 120px;
+  padding: 16px;
+
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 16px;
+  background: rgba(255,255,255,.07);
+
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.35;
+  text-align: left;
+  color: #fff;
+}
+
+a.problem {
+  text-decoration: none;
+  transition: background .25s, border-color .25s;
+}
+
+a.problem:hover {
+  border-color: rgba(244,201,107,.7);
+  background: rgba(255,255,255,.13);
+}
+
+.problem .clay {
+  margin-top: auto;
+  color: var(--gold-light);
+  font-family: Arial, sans-serif;
+  font-size: .66rem;
+  letter-spacing: .08em;
+}
+
+.problem small {
+  color: rgba(255,255,255,.6);
+  font-family: Arial, sans-serif;
+  font-size: .64rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.problem.solved {
+  border: 1.5px solid var(--gold-light);
+  background: rgba(244,201,107,.16);
+  box-shadow: 0 0 0 0 rgba(244,201,107,.6);
+  cursor: pointer;
+  animation: pulso 2.4s infinite;
+}
+
+.problem.solved small {
+  color: var(--gold-light);
+}
+
+@keyframes pulso {
+  0%   { box-shadow: 0 0 0 0 rgba(244,201,107,.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(244,201,107,0); }
+  100% { box-shadow: 0 0 0 0 rgba(244,201,107,0); }
+}
+
+.story {
+  display: none;
+  margin-top: 18px;
+  padding: 20px 22px;
+  border-left: 3px solid var(--gold-light);
+  border-radius: 0 16px 16px 0;
+  background: rgba(255,255,255,.08);
+  line-height: 1.75;
+}
+
+.story.aberta {
+  display: block;
+  animation: surgir .5s ease;
+}
+
+.story p {
+  margin: 0 0 10px;
+}
+
+@keyframes surgir {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Matemáticos com o prêmio dos outros */
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.person {
+  padding: 22px;
+  border: 1.5px solid rgba(75,67,136,.2);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+.person .who {
+  color: var(--gold);
+  font-family: Arial, sans-serif;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.person h3 {
+  margin: 10px 0 8px;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.person p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.62;
+}
+
+/* Convite final */
+
+.invite {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.door {
+  display: block;
+  padding: 26px;
+  border-radius: 22px;
+  background: linear-gradient(140deg, #3a3470, var(--dusk), #5a4a8f);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 16px 36px rgba(75,67,136,.22);
+  transition: transform .25s;
+}
+
+.door:hover {
+  transform: translateY(-4px);
+}
+
+.door .big {
+  display: block;
+  color: var(--gold-light);
+  font-size: 2.2rem;
+}
+
+.door h3 {
+  margin: 8px 0 6px;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.door p {
+  margin: 0 0 14px;
+  color: rgba(255,255,255,.8);
+  line-height: 1.6;
+}
+
+.door span.go {
+  color: var(--gold-light);
+  font-family: Arial, sans-serif;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+footer {
+  margin-top: 60px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--soft);
+  font-family: Arial, sans-serif;
+  font-size: .68rem;
+  letter-spacing: .12em;
+}
+
+footer a {
+  color: var(--dusk);
+  text-decoration: none;
+}
+
+/* O convite para o perfil no GitHub, em destaque */
+footer a.github {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 999px;
+  background: var(--dusk);
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+/* Celular */
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .stair {
+    max-width: 300px;
+  }
+
+  .counters,
+  .invite {
+    grid-template-columns: 1fr;
+  }
+
+  details.sabia .inside {
+    padding-left: 20px;
+  }
+}
+
+/* Quem prefere menos movimento na tela */
+@media (prefers-reduced-motion: reduce) {
+  .star,
+  .problem.solved {
+    animation: none;
+  }
+
+  .prize {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Seletor de idioma, no cabeçalho */
+.langs {
+  display: flex;
+  gap: 4px;
+  font-family: Arial, sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.langs a {
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: var(--soft);
+  text-decoration: none;
+}
+
+.langs a:hover {
+  color: var(--gold);
+}
+
+.langs a[aria-current="page"] {
+  background: var(--dusk);
+  color: var(--gold-light);
+}

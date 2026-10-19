@@ -309,6 +309,18 @@
         0 3px 8px rgba(58,52,112,.1);
     }
 
+    /* Cartão que é um link */
+
+    a.interest {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .soon.open {
+      color: var(--gold-light);
+    }
+
     /* Faixa superior do cartão, na cor crepúsculo */
 
     .card-head {
@@ -648,16 +660,19 @@
 
       <section class="interests">
 
-  <div class="interest">
+  <a class="interest" href="did-you-know.html"
+     data-href-en="did-you-know.html"
+     data-href-pt="voce-sabia.html"
+     data-href-it="lo-sapevi.html">
     <div class="card-head">
-      <span class="soon" data-i18n="soon">coming soon</span>
+      <span class="soon open" data-i18n="explore">explore →</span>
       <span class="symbol">∑</span>
       <h2 data-i18n="math-title">Mathematics</h2>
     </div>
     <p data-i18n="math-text">
-      Research, study notes and seminars, from evolution equations to the beauty of proofs.
+      Did you know? A million-dollar prize that only one person has ever won, and turned down. Prizes, free theses and curiosities from Brazil and the world.
     </p>
-  </div>
+  </a>
 
   <div class="interest">
     <div class="card-head">
@@ -735,7 +750,8 @@
         intro: 'A personal space devoted to curiosity, to study and to the many ways of understanding the world — from mathematics to the universe, from technology to art.',
         soon: 'coming soon',
         'math-title': 'Mathematics',
-        'math-text': 'Research, study notes and seminars, from evolution equations to the beauty of proofs.',
+        'math-text': 'Did you know? A million-dollar prize that only one person has ever won, and turned down. Prizes, free theses and curiosities from Brazil and the world.',
+        explore: 'explore →',
         'citizenship-title': 'Italian Citizenship by Marriage',
         'citizenship-text': 'A free, step-by-step practical guide to obtaining Italian citizenship by marriage without a private agency.',
         'tcm-title': 'Traditional Chinese Medicine',
@@ -755,7 +771,8 @@
         intro: 'Um espaço pessoal dedicado à curiosidade, ao estudo e às diferentes formas de compreender o mundo — da matemática ao universo, da tecnologia à arte.',
         soon: 'em breve',
         'math-title': 'Matemática',
-        'math-text': 'Pesquisa, notas de estudo e seminários, das equações de evolução à beleza das demonstrações.',
+        'math-text': 'Você sabia? Um prêmio de um milhão de dólares que só uma pessoa conquistou, e recusou. Prêmios, teses gratuitas e curiosidades do Brasil e do mundo.',
+        explore: 'explorar →',
         'citizenship-title': 'Cidadania Italiana por Casamento',
         'citizenship-text': 'Guia prático e gratuito, passo a passo, para obter a cidadania italiana por casamento sem empresa privada.',
         'tcm-title': 'Medicina Tradicional Chinesa',
@@ -775,7 +792,8 @@
         intro: 'Uno spazio personale dedicato alla curiosità, allo studio e ai diversi modi di comprendere il mondo — dalla matematica all’universo, dalla tecnologia all’arte.',
         soon: 'in arrivo',
         'math-title': 'Matematica',
-        'math-text': 'Ricerca, appunti di studio e seminari, dalle equazioni di evoluzione alla bellezza delle dimostrazioni.',
+        'math-text': 'Lo sapevi? Un premio da un milione di dollari che una sola persona ha vinto, e rifiutato. Premi, tesi gratuite e curiosità dal Brasile e dal mondo.',
+        explore: 'esplora →',
         'citizenship-title': 'Cittadinanza Italiana per Matrimonio',
         'citizenship-text': 'Una guida pratica e gratuita, passo dopo passo, per ottenere la cittadinanza italiana per matrimonio senza agenzie private.',
         'tcm-title': 'Medicina Tradizionale Cinese',
@@ -808,6 +826,11 @@
 
       document.querySelectorAll('.lang button').forEach(function (b) {
         b.setAttribute('aria-pressed', b.getAttribute('data-lang') === idioma);
+      });
+
+      // Cartões que são links: cada idioma leva à versão correspondente.
+      document.querySelectorAll('[data-href-' + idioma + ']').forEach(function (a) {
+        a.href = a.getAttribute('data-href-' + idioma);
       });
 
       // Guarda a escolha e deixa o endereço pronto para compartilhar
