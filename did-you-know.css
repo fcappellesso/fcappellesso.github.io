@@ -415,6 +415,29 @@ h2 {
   line-height: 1.62;
 }
 
+/* Link para a página oficial, no pé de cada cartão */
+.prize {
+  display: flex;
+  flex-direction: column;
+}
+
+.prize-link {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 14px;
+  color: var(--dusk);
+  font-family: Arial, sans-serif;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-decoration: none;
+}
+
+.prize-link:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
 /* Destaque: o cartão da Fields e outros especiais */
 .prize.brilha {
   border-color: rgba(176,125,30,.55);

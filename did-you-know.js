@@ -2,7 +2,7 @@
 // Cada página define antes, no seu próprio idioma:
 //   premios   – a lista dos prêmios (vira um cartão cada)
 //   perguntas – o "Verdade ou mito?"
-//   rotulos   – as palavras dos botões e das respostas
+//   rotulos   – as palavras dos botões, das respostas e do link oficial
 
 // O idioma desta página fica guardado, para a página inicial abrir nele
 try {
@@ -17,7 +17,9 @@ premios.forEach(function (p) {
   cartao.innerHTML =
     '<div class="prize-top"><span class="num">' + p.n + '</span>' +
     '<span class="tag">' + p.onde + '</span></div>' +
-    '<h3>' + p.nome + '</h3><p>' + p.texto + '</p>';
+    '<h3>' + p.nome + '</h3><p>' + p.texto + '</p>' +
+    '<a class="prize-link" href="' + p.site + '" target="_blank" rel="noopener noreferrer">' +
+    rotulos.visite + '</a>';
   grade.appendChild(cartao);
 });
 
