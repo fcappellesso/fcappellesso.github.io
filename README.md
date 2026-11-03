@@ -9,7 +9,7 @@ To visit my personal website, click the button below:
 
 <br>
 
-<img src="robo.svg" width="140" alt="Robozinho digitando em um laptop">
+<img src="assets/lema/lema-digitando.gif" width="140" alt="LEMA, minha corujinha, digitando em um notebook">
 <br>
 
 <img src="teorema.svg" width="560" alt="Cosa ci sfugge? Theorem: ∃x that calms the 神 ⇒ focus ∧ calm ∧ sleep ∧ balance. Proof: x = 内关. Tão óbvio como 人中 bem embaixo do nosso nariz.">
