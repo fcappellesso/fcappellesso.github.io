@@ -1,0 +1,19 @@
+/* Shared reading typography, based on the approved Mathematics card. */
+:root{--sans:'Manrope',Arial,sans-serif;--display:'Manrope',Arial,sans-serif;--muted:#354d60}
+body{font-family:var(--sans);font-size:18px;line-height:1.8}
+h1,h2,h3,dialog h2,.prose h1,.prose h2,.prose h3,.path h2,.related-card h3,.door h3,.person h3,.q p,.prize.largo h3{font-family:var(--sans);font-weight:600;letter-spacing:-.025em;line-height:1.25}
+h1,.hub-hero h1,.prose h1{font-size:52px;line-height:1.2}
+.home-hero h1{font-size:clamp(52px,5.6vw,78px);line-height:1.12}
+h1 span,h1 em{font-style:normal;white-space:normal;font-weight:600}
+h2,.prose h2,.related>h2{font-size:32px}
+h3,.prose h3,.path h2,.related-card h3,.door h3,.person h3,.prize.largo h3{font-size:28px}
+.interest h2,.interest:last-child h2{font-size:28px}.featured h2{font-size:52px}
+.intro,.lead,.sub,.prose,.prose p,.prose li,.path p,.interest p,.featured p,.related-card p,.door p,.person p,.prize p,.sabia .inside,.story{font-size:18px;line-height:1.8}
+.prose p,.related-card p{letter-spacing:0}.prose p{color:var(--muted)}
+.prose table{font-size:16px;line-height:1.8}.prose th{font-size:14px}.reading-layout aside,.steps-nav a{font-size:14px;line-height:1.7}.toc a{padding:7px 0}
+.eyebrow,.kicker,.soon,.featured .soon,.path-top,.tag,.num,.counter span,.person .who,.problem small,.problem .clay,.door .go,.fonte,footer{font-size:12px;line-height:1.7}.hook,.hook a,.q .answer,.sabia summary,.prize-link{font-size:16px;line-height:1.8}.q p{font-size:24px}.q button,.langs a,nav a,.lang button{font-size:14px;min-height:44px}.problem{font:600 23px/1.4 var(--sans)}
+.brand,.brand-monogram,.featured .topic-index,.level-num,.counter b,.door .big{font-family:var(--sans)}.brand,.brand-monogram{font-weight:600}.counter b{font-size:48px}.level-num{font-size:32px}.math-orbit{font-family:var(--sans)}
+.related-card p,.door p,.millennium .sub,.hero .lead,.hero .hook,.interest:last-child p{color:#f4f0ec}.related-card h3,.door h3{font-weight:600}
+.prose h1,.prose h2,.prose h3,.path h2,.related-card h3,.door h3{overflow-wrap:break-word}a:focus-visible,button:focus-visible{outline:3px solid #B87333;outline-offset:4px}
+@media(max-width:1050px){.home-hero{gap:40px}.featured h2{font-size:44px}}
+@media(max-width:760px){h1,.hub-hero h1,.prose h1{font-size:36px}.home-hero h1{font-size:clamp(38px,10vw,56px)}h2,.prose h2,.related>h2{font-size:28px}h3,.prose h3,.path h2,.related-card h3,.door h3,.person h3,.prize.largo h3,.interest h2,.interest:last-child h2{font-size:25px}.featured h2{font-size:36px}.counter b{font-size:36px}.q p{font-size:23px}.problem{font-size:23px}.reading-layout aside{font-size:15px}.prose table{font-size:16px}.prose td,.prose th{min-width:155px}.hero{padding:28px 22px}.hero h1{font-size:36px}.counters{gap:8px}.counter span{font-size:12px}.prose li::marker{font-size:15px}.prose blockquote{font-size:17px}.brand span{font-size:10px}.brand{font-size:38px}.featured .topic-index{font-size:20px}.brand-monogram{font-size:38px}.home-hero h1 span{white-space:normal}.reading-layout{min-width:0}.related-card,.door{min-width:0}}
