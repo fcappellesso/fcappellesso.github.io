@@ -21,7 +21,7 @@
 
       <div class="header-side">
         <div class="coordinates" data-i18n="coordinates">
-          Curiosity · Knowledge · Discovery
+          Curiosity · Knowledge · Creativity · Discovery
         </div>
 
         <nav class="lang" aria-label="Language">
@@ -39,7 +39,7 @@
         between what we know and all that is still to be discovered
       </p>
           <h1 id="opening-title">
-        Explore.<br>Learn.<br>
+        Explore.<br>Learn.<br>Create.<br>
         <span>Stay curious.</span>
       </h1>
           <p class="intro" data-i18n="intro">
@@ -167,7 +167,7 @@
     // correspondente desta tabela.
     var textos = {
       en: {
-        coordinates: 'Curiosity · Knowledge · Discovery',
+        coordinates: 'Curiosity · Knowledge · Creativity · Discovery',
         eyebrow: 'between what we know and all that is still to be discovered',
         intro: 'A personal space devoted to curiosity, to study and to the many ways of understanding the world — from mathematics to the universe, from technology to art.',
         soon: 'coming soon',
@@ -188,7 +188,7 @@
         lema: 'LEMA, my owl companion, typing on a laptop'
       },
       pt: {
-        coordinates: 'Curiosidade · Conhecimento · Descoberta',
+        coordinates: 'Curiosidade · Conhecimento · Criatividade · Descoberta',
         eyebrow: 'entre o que se sabe e tudo o que ainda há para descobrir',
         intro: 'Um espaço pessoal dedicado à curiosidade, ao estudo e às diferentes formas de compreender o mundo — da matemática ao universo, da tecnologia à arte.',
         soon: 'em breve',
@@ -209,7 +209,7 @@
         lema: 'LEMA, minha corujinha, digitando em um notebook'
       },
       it: {
-        coordinates: 'Curiosità · Conoscenza · Scoperta',
+        coordinates: 'Curiosità · Conoscenza · Creatività · Scoperta',
         eyebrow: 'tra ciò che si sa e tutto ciò che resta da scoprire',
         intro: 'Uno spazio personale dedicato alla curiosità, allo studio e ai diversi modi di comprendere il mondo — dalla matematica all’universo, dalla tecnologia all’arte.',
         soon: 'in arrivo',
@@ -272,12 +272,9 @@
       });
     });
 
-    // Idioma inicial: o do endereço (?lang=pt), senão o último escolhido,
-    // senão o inglês.
+    // English is the default; explicit language links preserve the visitor's choice.
     var pedido = new URLSearchParams(location.search).get('lang');
-    var salvo = null;
-    try { salvo = localStorage.getItem('idioma'); } catch (e) {}
-    mudarIdioma(textos[pedido] ? pedido : (textos[salvo] ? salvo : 'en'));
+    mudarIdioma(textos[pedido] ? pedido : 'en');
   </script>
 </body>
 </html>
