@@ -11,8 +11,8 @@
 \newcommand{\icon}[1]{\null\begin{tikzpicture}[remember picture,overlay,x=1mm,y=1mm,line width=.65mm,line cap=round,line join=round,draw=oxford]\begin{scope}[shift={(current page.center)}]#1\end{scope}\end{tikzpicture}\newpage}
 \newcommand{\globe}{\fill[champagne] (0,0) circle(10);\draw (0,0) circle(10);\draw[teal] (0,0) ellipse(4.5 and 10);\draw[teal] (-9,0) -- (9,0);\draw[teal] (-8,6) .. controls (-3,3) and (3,3) .. (8,6);\draw[teal] (-8,-6) .. controls (-3,-3) and (3,-3) .. (8,-6);}
 \begin{document}
-% Books
-\icon{\filldraw[fill=airforce] (-10,-8)--(6,-10)--(10,-7)--(-6,-5)--cycle;\filldraw[fill=champagne] (-10,-6)--(6,-8)--(6,-10)--(-10,-8)--cycle;\filldraw[fill=copper] (-10,-1)--(6,-3)--(10,0)--(-6,2)--cycle;\filldraw[fill=champagne] (-10,1)--(6,-1)--(6,-3)--(-10,-1)--cycle;\filldraw[fill=teal] (-10,6)--(6,4)--(10,7)--(-6,9)--cycle;\filldraw[fill=champagne] (-10,8)--(6,6)--(6,4)--(-10,6)--cycle;}
+% Single closed book
+\icon{\filldraw[fill=champagne,rounded corners=1mm] (-8,-11) rectangle(8,10);\filldraw[fill=teal,rounded corners=1mm] (-8,-8) rectangle(8,12);\draw[oxford] (-5,-8)--(-5,12);\draw[copper,line width=.9mm] (-1,7)--(5,7);\draw[airforce] (-5,-10)--(7,-10);\fill[copper] (3,12)--(3,4)--(4.5,5.4)--(6,4)--(6,12)--cycle;}
 % International
 \icon{\globe\fill[copper] (7,7) circle(2);}
 % Europe
