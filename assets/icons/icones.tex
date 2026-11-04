@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[paperwidth=32mm,paperheight=32mm,margin=0mm]{geometry}
+\usepackage{tikz}
+\pagestyle{empty}
+\definecolor{oxford}{HTML}{002147}
+\definecolor{teal}{HTML}{367588}
+\definecolor{copper}{HTML}{B87333}
+\definecolor{champagne}{HTML}{F7E7CE}
+\definecolor{airforce}{HTML}{5D8AA8}
+\definecolor{sage}{HTML}{738678}
+\newcommand{\icon}[1]{\null\begin{tikzpicture}[remember picture,overlay,x=1mm,y=1mm,line width=.65mm,line cap=round,line join=round,draw=oxford]\begin{scope}[shift={(current page.center)}]#1\end{scope}\end{tikzpicture}\newpage}
+\newcommand{\globe}{\fill[champagne] (0,0) circle(10);\draw (0,0) circle(10);\draw[teal] (0,0) ellipse(4.5 and 10);\draw[teal] (-9,0) -- (9,0);\draw[teal] (-8,6) .. controls (-3,3) and (3,3) .. (8,6);\draw[teal] (-8,-6) .. controls (-3,-3) and (3,-3) .. (8,-6);}
+\begin{document}
+% Books
+\icon{\filldraw[fill=airforce] (-10,-8)--(6,-10)--(10,-7)--(-6,-5)--cycle;\filldraw[fill=champagne] (-10,-6)--(6,-8)--(6,-10)--(-10,-8)--cycle;\filldraw[fill=copper] (-10,-1)--(6,-3)--(10,0)--(-6,2)--cycle;\filldraw[fill=champagne] (-10,1)--(6,-1)--(6,-3)--(-10,-1)--cycle;\filldraw[fill=teal] (-10,6)--(6,4)--(10,7)--(-6,9)--cycle;\filldraw[fill=champagne] (-10,8)--(6,6)--(6,4)--(-10,6)--cycle;}
+% International
+\icon{\globe\fill[copper] (7,7) circle(2);}
+% Europe
+\icon{\globe\fill[copper] (2,5) circle(2.8);}
+% Americas
+\icon{\globe\draw[copper,line width=2mm] (-4,6)--(-6,3)--(-3,0)--(-2,-6);}
+% Asia and Oceania
+\icon{\globe\draw[copper,line width=2mm] (2,5)--(6,4)--(4,0);\fill[copper] (5,-5) ellipse(2.4 and 1.4);}
+% Brazil, an abstract atlas tile
+\icon{\filldraw[fill=sage] (-11,-8) rectangle(11,8);\filldraw[fill=champagne] (-8,0)--(0,5.5)--(8,0)--(0,-5.5)--cycle;\fill[oxford] (0,0) circle(3.2);\draw[airforce] (-2.8,1) .. controls (0,1) and (1,0) .. (2.8,-1);}
+% Open lock
+\icon{\filldraw[fill=champagne] (-8,-9) rectangle(8,3);\draw[teal,line width=1.3mm] (-4,3)--(-4,7) arc(180:0:5)--(6,6);\fill[copper] (0,-2) circle(1.4);\draw[copper] (0,-2)--(0,-5);}
+% Checklist
+\icon{\filldraw[fill=champagne,rounded corners=1mm] (-9,-11) rectangle(9,11);\filldraw[fill=teal] (-4,9) rectangle(4,12);\draw[teal,line width=1mm] (-5,1)--(-2,-2)--(5,5);\draw[airforce] (-4,-7)--(4,-7);}
+% Caution
+\icon{\filldraw[fill=champagne] (0,11)--(-12,-10)--(12,-10)--cycle;\draw[copper,line width=1.5mm] (0,4)--(0,-2);\fill[copper] (0,-6) circle(.9);}
+
+% Free access: open book
+\icon{\filldraw[fill=champagne] (-11,-7)--(-11,8).. controls(-6,10) and(-3,9)..(0,6)..controls(3,9)and(6,10)..(11,8)--(11,-7)..controls(6,-5)and(3,-5)..(0,-8)..controls(-3,-5)and(-6,-5)..cycle;\draw[teal](0,6)--(0,-8);\draw[copper](-8,4)--(-3,3);\draw[copper](3,3)--(8,4);}
+% Personal account
+\icon{\filldraw[fill=champagne] (0,5) circle(4);\filldraw[fill=airforce] (-9,-9)..controls(-9,3)and(9,3)..(9,-9)--cycle;}
+% Institution
+\icon{\filldraw[fill=champagne] (-12,5)--(0,12)--(12,5)--cycle;\draw[copper](-8,2)--(-8,-7) (0,2)--(0,-7) (8,2)--(8,-7);\draw(-11,-9)--(11,-9) (-12,-12)--(12,-12);}
+% Payment card
+\icon{\filldraw[fill=champagne,rounded corners=1mm] (-12,-8) rectangle(12,8);\fill[teal](-12,2)rectangle(12,5);\draw[copper](-7,-3)--(-2,-3);\draw[airforce](4,-3)--(7,-3);}
+% Research compass
+\icon{\filldraw[fill=champagne] (0,0) circle(11);\draw[airforce] (0,9)--(0,7) (0,-9)--(0,-7) (-9,0)--(-7,0) (9,0)--(7,0);\filldraw[fill=copper] (5,7)--(2,-2)--(-5,-7)--(-2,2)--cycle;\fill[teal] (-5,-7)--(-2,2)--(2,-2)--cycle;\fill[oxford](0,0)circle(1);}
+\end{document}
