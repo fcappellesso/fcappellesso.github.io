@@ -23,6 +23,10 @@ premios.forEach(function (p) {
   grade.appendChild(cartao);
 });
 
+// O contador de prêmios acompanha a lista sozinho (+1: os Problemas do Milênio, que não são um cartão)
+var contaPremios = document.querySelector('[data-conta-premios]');
+if (contaPremios) contaPremios.setAttribute('data-conta', premios.length + 1);
+
 // Verdade ou mito: as perguntas e os rótulos vêm de cada página
 var lista = document.getElementById('quiz-list');
 
