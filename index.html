@@ -150,7 +150,7 @@
 
     <footer class="footer-ai">
       <span data-i18n="footer">FRANCHESCA LEMOS CAPPELLESSO · PERSONAL SPACE</span>
-      <img class="ai-badge" src="assets/icons/ai-assisted.svg" width="100" height="20" alt="AI-assisted: yes" data-i18n-title="aiTitle" title="Made in collaboration with AI">
+      <img class="ai-badge" src="assets/icons/ai-assisted.svg" height="20" alt="AI-assisted: yes" data-i18n-title="aiTitle" data-i18n-src="aiSrc" data-i18n-alt="aiAlt" title="Made in collaboration with AI">
     </footer>
 
   </div>
@@ -189,6 +189,8 @@
         'suggest-text': 'Have an idea, a question or an interesting subject? Send a suggestion.',
         footer: 'FRANCHESCA LEMOS CAPPELLESSO · PERSONAL SPACE',
         aiTitle: 'Made in collaboration with AI',
+        aiSrc: 'assets/icons/ai-assisted.svg',
+        aiAlt: 'AI-assisted: yes',
         lema: 'LEMA, my owl companion, typing on a laptop'
       },
       pt: {
@@ -211,6 +213,8 @@
         'suggest-text': 'Tem uma ideia, dúvida ou assunto interessante? Envie uma sugestão.',
         footer: 'FRANCHESCA LEMOS CAPPELLESSO · ESPAÇO PESSOAL',
         aiTitle: 'Feito com a colaboração de IA',
+        aiSrc: 'assets/icons/ai-assisted-pt.svg',
+        aiAlt: 'Assistido por IA: sim',
         lema: 'LEMA, minha corujinha, digitando em um notebook'
       },
       it: {
@@ -233,6 +237,8 @@
         'suggest-text': 'Hai un’idea, una domanda o un argomento interessante? Invia un suggerimento.',
         footer: 'FRANCHESCA LEMOS CAPPELLESSO · SPAZIO PERSONALE',
         aiTitle: "Realizzato in collaborazione con l'IA",
+        aiSrc: 'assets/icons/ai-assisted-it.svg',
+        aiAlt: 'Assistito da IA: sì',
         lema: 'LEMA, la mia gufetta, che scrive al portatile'
       }
     };
@@ -250,6 +256,10 @@
 
       document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
         el.setAttribute('aria-label', t[el.getAttribute('data-i18n-aria')]);
+      });
+
+      document.querySelectorAll('[data-i18n-src]').forEach(function (el) {
+        el.src = t[el.getAttribute('data-i18n-src')];
       });
 
       document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
