@@ -25,8 +25,10 @@
   .sugestao-nota{display:flex;align-items:center;gap:8px}
   .sugestao-info{display:inline-grid;place-items:center;width:22px;height:22px;min-height:0!important;margin:0;padding:0!important;border:1.5px solid #f4f0ec99!important;border-radius:50%!important;background:transparent!important;color:#f4f0ecdd!important;font:italic 700 13px/1 Georgia,serif!important;flex:none;cursor:pointer}
   .sugestao-info:hover,.sugestao-info[aria-expanded=true]{background:var(--champagne)!important;color:var(--ink)!important;border-color:var(--champagne)!important}
-  .interest .sugestao-privacidade{margin:0;max-width:none;font-size:11px;line-height:1.5;color:#f4f0ec80;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
-  .interest .sugestao-privacidade.aberta{font-size:14px;line-height:1.7;color:#f4f0ecdd;white-space:normal}
+  .interest .sugestao .sugestao-privacidade{margin:0;max-width:none;font-size:12px;line-height:1.6;color:#f4f0ec8c;cursor:pointer}
+  .interest .sugestao .sugestao-privacidade:not(.aberta){display:none}
+  .interest .sugestao .sugestao-privacidade.aberta{font-size:14px;line-height:1.7;color:#f4f0ecdd}
+
   .interest .sugestao-status{margin:0;min-height:1.5em;font-size:15px;color:var(--champagne)}</style>
 </head>
 
@@ -177,7 +179,7 @@
           <span id="sugestao-aviso" data-i18n="suggest-private">Your suggestion is sent privately.</span></span>
         <span id="sugestao-contador" aria-live="off">0/40</span>
       </div>
-      <p id="sugestao-privacidade" class="sugestao-privacidade" data-i18n="suggest-privacy">To prevent spam and abuse, the delivery service Web3Forms records the sender's IP address. In line with Brazil's data protection law (LGPD), it is used only for this purpose: it is never published or shared, and only the site owner receives the suggestions.</p>
+      <p id="sugestao-privacidade" class="sugestao-privacidade"><span data-i18n="suggest-privacy">To prevent spam and abuse, the delivery service Web3Forms records the sender's IP address. In line with Brazil's General Data Protection Law (LGPD, Law No. 13,709/2018), similar to the EU and UK GDPR, it is used only for this purpose: it is never published or shared, and only the site owner receives the suggestions.</span></p>
       <p class="sugestao-status" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -230,7 +232,7 @@
         'suggest-send': 'Send',
         'suggest-private': 'Your suggestion is sent privately.',
         'suggest-info': 'Privacy information',
-        'suggest-privacy': "To prevent spam and abuse, the delivery service Web3Forms records the sender's IP address. In line with Brazil's data protection law (LGPD), it is used only for this purpose: it is never published or shared, and only the site owner receives the suggestions.",
+        'suggest-privacy': "To prevent spam and abuse, the delivery service Web3Forms records the sender's IP address. In line with Brazil's General Data Protection Law (LGPD, Law No. 13,709/2018), similar to the EU and UK GDPR, it is used only for this purpose: it is never published or shared, and only the site owner receives the suggestions.",
         'suggest-empty': 'Write a topic first.',
         'suggest-sending': 'Sending…',
         'suggest-ok': 'Thank you! Suggestion received 🦉',
@@ -265,7 +267,7 @@
         'suggest-send': 'Enviar',
         'suggest-private': 'Sua sugestão é enviada de forma privada.',
         'suggest-info': 'Informações de privacidade',
-        'suggest-privacy': 'Para evitar spam e abusos, o serviço de envio Web3Forms registra o endereço IP de quem envia. Conforme a LGPD, esse dado é usado só para essa finalidade: não é publicado nem repassado, e só a proprietária do site recebe as sugestões.',
+        'suggest-privacy': 'Para evitar spam e abusos, o serviço de envio Web3Forms registra o endereço IP de quem envia. De acordo com a LGPD (Lei Geral de Proteção de Dados, Lei nº 13.709/2018), esse dado é usado só para essa finalidade: não é publicado nem repassado, e só a proprietária do site recebe as sugestões.',
         'suggest-empty': 'Escreva um tema primeiro.',
         'suggest-sending': 'Enviando…',
         'suggest-ok': 'Obrigada! Sugestão recebida 🦉',
@@ -300,7 +302,7 @@
         'suggest-send': 'Invia',
         'suggest-private': 'Il tuo suggerimento viene inviato in modo privato.',
         'suggest-info': 'Informazioni sulla privacy',
-        'suggest-privacy': "Per evitare spam e abusi, il servizio di invio Web3Forms registra l'indirizzo IP di chi invia. In conformità con la legge brasiliana sulla protezione dei dati (LGPD), questo dato è usato solo per questo scopo: non viene pubblicato né condiviso, e solo la proprietaria del sito riceve i suggerimenti.",
+        'suggest-privacy': "Per evitare spam e abusi, il servizio di invio Web3Forms registra l'indirizzo IP di chi invia. In conformità con la legge brasiliana sulla protezione dei dati (LGPD, Legge n. 13.709/2018), analoga al GDPR (Regolamento UE 2016/679), questo dato è usato solo per questo scopo: non viene pubblicato né condiviso, e solo la proprietaria del sito riceve i suggerimenti.",
         'suggest-empty': 'Scrivi prima un tema.',
         'suggest-sending': 'Invio in corso…',
         'suggest-ok': 'Grazie! Suggerimento ricevuto 🦉',
