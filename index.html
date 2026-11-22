@@ -9,7 +9,20 @@
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="typography.css?v=3">
-  <style>.footer-ai{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}.footer-ai .ai-badge{display:block}</style>
+  <style>.footer-ai{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}.footer-ai .ai-badge{display:block}
+  .sugestao{grid-column:1/-1;display:grid;gap:8px;margin:0}
+  .sugestao-rotulo{font:600 12px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--champagne)}
+  .sugestao-linha{display:flex;gap:10px;flex-wrap:wrap}
+  .sugestao input[type=text]{flex:1 1 220px;min-height:48px;padding:10px 14px;border:1px solid #f4f0ec66;border-radius:4px;background:#ffffff10;color:var(--paper);font:400 17px var(--sans)}
+  .sugestao input[type=text]::placeholder{color:#f4f0ecaa}
+  .sugestao input[type=text]:focus{outline:2px solid var(--champagne);outline-offset:2px}
+  .sugestao button{min-height:48px;padding:0 24px;border:0;border-radius:4px;background:var(--champagne);color:var(--ink);font:700 15px var(--sans);cursor:pointer}
+  .sugestao button:hover{background:var(--white)}
+  .sugestao button:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+  .sugestao button:disabled{opacity:.55;cursor:default}
+  .sugestao-rodape{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#f4f0eccc}
+  .sugestao-armadilha{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .interest .sugestao-status{margin:0;min-height:1.5em;font-size:15px;color:var(--champagne)}</style>
 </head>
 
 <body>
@@ -140,8 +153,25 @@
       <h2 data-i18n="suggest-title">Suggest a topic</h2>
     </div>
     <p data-i18n="suggest-text">
-      Have an idea, a question or an interesting subject? Send a suggestion.
+      Which subject would you like to see in a new site? Send your topic suggestion.
     </p>
+    <!-- As sugestões vão por e-mail só para a Franchesca (Web3Forms). Nada é publicado no site. -->
+    <form class="sugestao" id="sugestao" novalidate>
+      <label for="sugestao-texto" class="sugestao-rotulo" data-i18n="suggest-label">Topic for a new site</label>
+      <div class="sugestao-linha">
+        <input id="sugestao-texto" name="message" type="text" maxlength="40" required autocomplete="off"
+               placeholder="e.g. astronomy for beginners" data-i18n-placeholder="suggest-placeholder"
+               aria-describedby="sugestao-contador sugestao-aviso">
+        <button type="submit" data-i18n="suggest-send">Send</button>
+      </div>
+      <!-- Armadilha para robôs: invisível para pessoas. -->
+      <input type="checkbox" name="botcheck" class="sugestao-armadilha" tabindex="-1" aria-hidden="true">
+      <div class="sugestao-rodape">
+        <span id="sugestao-aviso" data-i18n="suggest-private">Only I read the suggestions.</span>
+        <span id="sugestao-contador" aria-live="off">0/40</span>
+      </div>
+      <p class="sugestao-status" role="status" aria-live="polite"></p>
+    </form>
   </div>
 
 </section>
@@ -186,7 +216,16 @@
         'curiosities-title': 'Curiosities',
         'curiosities-text': 'Science, the universe, history and everything that sparks questions, in short and accessible texts.',
         'suggest-title': 'Suggest a topic',
-        'suggest-text': 'Have an idea, a question or an interesting subject? Send a suggestion.',
+        'suggest-text': 'Which subject would you like to see in a new site? Send your topic suggestion.',
+        'suggest-label': 'Topic for a new site',
+        'suggest-placeholder': 'e.g. astronomy for beginners',
+        'suggest-send': 'Send',
+        'suggest-private': 'Only Franchesca reads the suggestions.',
+        'suggest-empty': 'Write a topic first.',
+        'suggest-sending': 'Sending…',
+        'suggest-ok': 'Thank you! Suggestion received 🦉',
+        'suggest-limit': 'Thank you! You have already sent your suggestions for today 🦉',
+        'suggest-error': 'It could not be sent. Please try again later.',
         footer: 'FRANCHESCA LEMOS CAPPELLESSO · PERSONAL SPACE',
         aiTitle: 'Made in collaboration with AI',
         aiSrc: 'assets/icons/ai-assisted.svg',
@@ -210,7 +249,16 @@
         'curiosities-title': 'Curiosidades',
         'curiosities-text': 'Ciência, universo, história e tudo aquilo que desperta perguntas, em textos curtos e acessíveis.',
         'suggest-title': 'Sugira um tema',
-        'suggest-text': 'Tem uma ideia, dúvida ou assunto interessante? Envie uma sugestão.',
+        'suggest-text': 'Que assunto você gostaria de ver em um novo site? Envie sua sugestão de tema.',
+        'suggest-label': 'Tema para um novo site',
+        'suggest-placeholder': 'ex.: astronomia para iniciantes',
+        'suggest-send': 'Enviar',
+        'suggest-private': 'Só a Franchesca lê as sugestões.',
+        'suggest-empty': 'Escreva um tema primeiro.',
+        'suggest-sending': 'Enviando…',
+        'suggest-ok': 'Obrigada! Sugestão recebida 🦉',
+        'suggest-limit': 'Obrigada! Você já enviou suas sugestões de hoje 🦉',
+        'suggest-error': 'Não foi possível enviar. Tente de novo mais tarde.',
         footer: 'FRANCHESCA LEMOS CAPPELLESSO · ESPAÇO PESSOAL',
         aiTitle: 'Feito com a colaboração de IA',
         aiSrc: 'assets/icons/ai-assisted-pt.svg',
@@ -234,7 +282,16 @@
         'curiosities-title': 'Curiosità',
         'curiosities-text': 'Scienza, universo, storia e tutto ciò che suscita domande, in testi brevi e accessibili.',
         'suggest-title': 'Suggerisci un tema',
-        'suggest-text': 'Hai un’idea, una domanda o un argomento interessante? Invia un suggerimento.',
+        'suggest-text': 'Quale argomento vorresti vedere in un nuovo sito? Invia il tuo suggerimento di tema.',
+        'suggest-label': 'Tema per un nuovo sito',
+        'suggest-placeholder': 'es.: astronomia per principianti',
+        'suggest-send': 'Invia',
+        'suggest-private': 'Solo Franchesca legge i suggerimenti.',
+        'suggest-empty': 'Scrivi prima un tema.',
+        'suggest-sending': 'Invio in corso…',
+        'suggest-ok': 'Grazie! Suggerimento ricevuto 🦉',
+        'suggest-limit': 'Grazie! Hai già inviato i tuoi suggerimenti di oggi 🦉',
+        'suggest-error': 'Non è stato possibile inviare. Riprova più tardi.',
         footer: 'FRANCHESCA LEMOS CAPPELLESSO · SPAZIO PERSONALE',
         aiTitle: "Realizzato in collaborazione con l'IA",
         aiSrc: 'assets/icons/ai-assisted-it.svg',
@@ -266,6 +323,14 @@
         el.title = t[el.getAttribute('data-i18n-title')];
       });
 
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+        el.placeholder = t[el.getAttribute('data-i18n-placeholder')];
+      });
+
+      idiomaAtual = idioma;
+      var avisoSugestao = document.querySelector('.sugestao-status');
+      if (avisoSugestao) avisoSugestao.textContent = '';
+
       document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
         el.alt = t[el.getAttribute('data-i18n-alt')];
       });
@@ -291,6 +356,55 @@
         mudarIdioma(b.getAttribute('data-lang'));
       });
     });
+
+
+    // Sugestões: enviadas por e-mail só para a Franchesca (Web3Forms); nada aparece no site.
+    var idiomaAtual = 'en';
+    (function () {
+      var form = document.getElementById('sugestao');
+      if (!form) return;
+      var campo = document.getElementById('sugestao-texto');
+      var contador = document.getElementById('sugestao-contador');
+      var status = form.querySelector('.sugestao-status');
+      var botao = form.querySelector('button');
+      var LIMITE_DIA = 3, PAUSA_MS = 10000;
+      function msg(chave) { status.textContent = textos[idiomaAtual][chave]; }
+      function hoje() { return new Date().toISOString().slice(0, 10); }
+      // Contagem só no navegador da pessoa (nada pessoal é enviado).
+      function enviadosHoje() {
+        try { var r = JSON.parse(localStorage.getItem('sugestoes') || '{}'); return r.dia === hoje() ? r.n : 0; }
+        catch (e) { return 0; }
+      }
+      function contarEnvio() {
+        try { localStorage.setItem('sugestoes', JSON.stringify({ dia: hoje(), n: enviadosHoje() + 1 })); } catch (e) {}
+      }
+      campo.addEventListener('input', function () { contador.textContent = campo.value.length + '/40'; });
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var texto = campo.value.trim().slice(0, 40);
+        if (!texto) { msg('suggest-empty'); campo.focus(); return; }
+        if (enviadosHoje() >= LIMITE_DIA) { msg('suggest-limit'); return; }
+        botao.disabled = true;
+        function liberar() { setTimeout(function () { botao.disabled = false; }, PAUSA_MS); }
+        function concluir() { campo.value = ''; contador.textContent = '0/40'; contarEnvio(); msg('suggest-ok'); liberar(); }
+        // Armadilha preenchida: é um robô; finge que deu certo e não envia nada.
+        if (form.botcheck.checked) { concluir(); return; }
+        msg('suggest-sending');
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: 'bb0fb1e9-e58f-433a-9052-7397b8245bb2',
+            subject: 'Nova sugestão de tema para site',
+            from_name: 'Site fcappellesso.github.io',
+            message: texto,
+            idioma: idiomaAtual
+          })
+        }).then(function (r) { return r.json(); })
+          .then(function (d) { if (d.success) concluir(); else { msg('suggest-error'); liberar(); } })
+          .catch(function () { msg('suggest-error'); liberar(); });
+      });
+    })();
 
     // English is the default; explicit language links preserve the visitor's choice.
     var pedido = new URLSearchParams(location.search).get('lang');
