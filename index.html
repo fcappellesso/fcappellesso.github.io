@@ -22,6 +22,10 @@
   .sugestao button:disabled{opacity:.55;cursor:default}
   .sugestao-rodape{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#f4f0eccc}
   .sugestao-armadilha{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .sugestao-info{display:inline-grid;place-items:center;width:22px;height:22px;min-height:0!important;margin-left:6px;padding:0!important;border:1.5px solid #f4f0ec99!important;border-radius:50%!important;background:transparent!important;color:#f4f0ecdd!important;font:italic 700 13px/1 Georgia,serif!important;vertical-align:middle;cursor:pointer}
+  .sugestao-info:hover,.sugestao-info[aria-expanded=true]{background:var(--champagne)!important;color:var(--ink)!important;border-color:var(--champagne)!important}
+  .interest .sugestao-privacidade{margin:0;max-width:none;font-size:11px;line-height:1.5;color:#f4f0ec80;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+  .interest .sugestao-privacidade.aberta{font-size:14px;line-height:1.7;color:#f4f0ecdd;white-space:normal}
   .interest .sugestao-status{margin:0;min-height:1.5em;font-size:15px;color:var(--champagne)}</style>
 </head>
 
@@ -167,9 +171,12 @@
       <!-- Armadilha para robôs: invisível para pessoas. -->
       <input type="checkbox" name="botcheck" class="sugestao-armadilha" tabindex="-1" aria-hidden="true">
       <div class="sugestao-rodape">
-        <span id="sugestao-aviso" data-i18n="suggest-private">Only I read the suggestions.</span>
+        <span><span id="sugestao-aviso" data-i18n="suggest-private">Only Franchesca reads the suggestions.</span>
+          <button type="button" class="sugestao-info" aria-expanded="false" aria-controls="sugestao-privacidade"
+                  data-i18n-aria="suggest-info" aria-label="Privacy information">i</button></span>
         <span id="sugestao-contador" aria-live="off">0/40</span>
       </div>
+      <p id="sugestao-privacidade" class="sugestao-privacidade" data-i18n="suggest-privacy">To prevent spam and abuse, the delivery service Web3Forms records the sender's IP address. In line with Brazil's data protection law (LGPD), it is used only for this purpose: it is never published or shared, and only the site owner receives the suggestions.</p>
       <p class="sugestao-status" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -221,6 +228,8 @@
         'suggest-placeholder': 'e.g. astronomy for beginners',
         'suggest-send': 'Send',
         'suggest-private': 'Only Franchesca reads the suggestions.',
+        'suggest-info': 'Privacy information',
+        'suggest-privacy': "To prevent spam and abuse, the delivery service Web3Forms records the sender's IP address. In line with Brazil's data protection law (LGPD), it is used only for this purpose: it is never published or shared, and only the site owner receives the suggestions.",
         'suggest-empty': 'Write a topic first.',
         'suggest-sending': 'Sending…',
         'suggest-ok': 'Thank you! Suggestion received 🦉',
@@ -254,6 +263,8 @@
         'suggest-placeholder': 'ex.: astronomia para iniciantes',
         'suggest-send': 'Enviar',
         'suggest-private': 'Só a Franchesca lê as sugestões.',
+        'suggest-info': 'Informações de privacidade',
+        'suggest-privacy': 'Para evitar spam e abusos, o serviço de envio Web3Forms registra o endereço IP de quem envia. Conforme a LGPD, esse dado é usado só para essa finalidade: não é publicado nem repassado, e só a proprietária do site recebe as sugestões.',
         'suggest-empty': 'Escreva um tema primeiro.',
         'suggest-sending': 'Enviando…',
         'suggest-ok': 'Obrigada! Sugestão recebida 🦉',
@@ -287,6 +298,8 @@
         'suggest-placeholder': 'es.: astronomia per principianti',
         'suggest-send': 'Invia',
         'suggest-private': 'Solo Franchesca legge i suggerimenti.',
+        'suggest-info': 'Informazioni sulla privacy',
+        'suggest-privacy': "Per evitare spam e abusi, il servizio di invio Web3Forms registra l'indirizzo IP di chi invia. In conformità con la legge brasiliana sulla protezione dei dati (LGPD), questo dato è usato solo per questo scopo: non viene pubblicato né condiviso, e solo la proprietaria del sito riceve i suggerimenti.",
         'suggest-empty': 'Scrivi prima un tema.',
         'suggest-sending': 'Invio in corso…',
         'suggest-ok': 'Grazie! Suggerimento ricevuto 🦉',
@@ -378,6 +391,14 @@
       function contarEnvio() {
         try { localStorage.setItem('sugestoes', JSON.stringify({ dia: hoje(), n: enviadosHoje() + 1 })); } catch (e) {}
       }
+      var info = form.querySelector('.sugestao-info');
+      var privacidade = document.getElementById('sugestao-privacidade');
+      function alternarPrivacidade() {
+        var aberta = privacidade.classList.toggle('aberta');
+        info.setAttribute('aria-expanded', aberta);
+      }
+      info.addEventListener('click', alternarPrivacidade);
+      privacidade.addEventListener('click', alternarPrivacidade);
       campo.addEventListener('input', function () { contador.textContent = campo.value.length + '/40'; });
       form.addEventListener('submit', function (ev) {
         ev.preventDefault();
