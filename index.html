@@ -22,7 +22,8 @@
   .sugestao button:disabled{opacity:.55;cursor:default}
   .sugestao-rodape{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#f4f0eccc}
   .sugestao-armadilha{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-  .sugestao-info{display:inline-grid;place-items:center;width:22px;height:22px;min-height:0!important;margin-left:6px;padding:0!important;border:1.5px solid #f4f0ec99!important;border-radius:50%!important;background:transparent!important;color:#f4f0ecdd!important;font:italic 700 13px/1 Georgia,serif!important;vertical-align:middle;cursor:pointer}
+  .sugestao-nota{display:flex;align-items:center;gap:8px}
+  .sugestao-info{display:inline-grid;place-items:center;width:22px;height:22px;min-height:0!important;margin:0;padding:0!important;border:1.5px solid #f4f0ec99!important;border-radius:50%!important;background:transparent!important;color:#f4f0ecdd!important;font:italic 700 13px/1 Georgia,serif!important;flex:none;cursor:pointer}
   .sugestao-info:hover,.sugestao-info[aria-expanded=true]{background:var(--champagne)!important;color:var(--ink)!important;border-color:var(--champagne)!important}
   .interest .sugestao-privacidade{margin:0;max-width:none;font-size:11px;line-height:1.5;color:#f4f0ec80;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
   .interest .sugestao-privacidade.aberta{font-size:14px;line-height:1.7;color:#f4f0ecdd;white-space:normal}
@@ -171,9 +172,9 @@
       <!-- Armadilha para robôs: invisível para pessoas. -->
       <input type="checkbox" name="botcheck" class="sugestao-armadilha" tabindex="-1" aria-hidden="true">
       <div class="sugestao-rodape">
-        <span><span id="sugestao-aviso" data-i18n="suggest-private">Only Franchesca reads the suggestions.</span>
-          <button type="button" class="sugestao-info" aria-expanded="false" aria-controls="sugestao-privacidade"
-                  data-i18n-aria="suggest-info" aria-label="Privacy information">i</button></span>
+        <span class="sugestao-nota"><button type="button" class="sugestao-info" aria-expanded="false" aria-controls="sugestao-privacidade"
+                  data-i18n-aria="suggest-info" aria-label="Privacy information">i</button>
+          <span id="sugestao-aviso" data-i18n="suggest-private">Your suggestion is sent privately.</span></span>
         <span id="sugestao-contador" aria-live="off">0/40</span>
       </div>
       <p id="sugestao-privacidade" class="sugestao-privacidade" data-i18n="suggest-privacy">To prevent spam and abuse, the delivery service Web3Forms records the sender's IP address. In line with Brazil's data protection law (LGPD), it is used only for this purpose: it is never published or shared, and only the site owner receives the suggestions.</p>
@@ -227,7 +228,7 @@
         'suggest-label': 'Topic for a new site',
         'suggest-placeholder': 'e.g. astronomy for beginners',
         'suggest-send': 'Send',
-        'suggest-private': 'Only Franchesca reads the suggestions.',
+        'suggest-private': 'Your suggestion is sent privately.',
         'suggest-info': 'Privacy information',
         'suggest-privacy': "To prevent spam and abuse, the delivery service Web3Forms records the sender's IP address. In line with Brazil's data protection law (LGPD), it is used only for this purpose: it is never published or shared, and only the site owner receives the suggestions.",
         'suggest-empty': 'Write a topic first.',
@@ -262,7 +263,7 @@
         'suggest-label': 'Tema para um novo site',
         'suggest-placeholder': 'ex.: astronomia para iniciantes',
         'suggest-send': 'Enviar',
-        'suggest-private': 'Só a Franchesca lê as sugestões.',
+        'suggest-private': 'Sua sugestão é enviada de forma privada.',
         'suggest-info': 'Informações de privacidade',
         'suggest-privacy': 'Para evitar spam e abusos, o serviço de envio Web3Forms registra o endereço IP de quem envia. Conforme a LGPD, esse dado é usado só para essa finalidade: não é publicado nem repassado, e só a proprietária do site recebe as sugestões.',
         'suggest-empty': 'Escreva um tema primeiro.',
@@ -297,7 +298,7 @@
         'suggest-label': 'Tema per un nuovo sito',
         'suggest-placeholder': 'es.: astronomia per principianti',
         'suggest-send': 'Invia',
-        'suggest-private': 'Solo Franchesca legge i suggerimenti.',
+        'suggest-private': 'Il tuo suggerimento viene inviato in modo privato.',
         'suggest-info': 'Informazioni sulla privacy',
         'suggest-privacy': "Per evitare spam e abusi, il servizio di invio Web3Forms registra l'indirizzo IP di chi invia. In conformità con la legge brasiliana sulla protezione dei dati (LGPD), questo dato è usato solo per questo scopo: non viene pubblicato né condiviso, e solo la proprietaria del sito riceve i suggerimenti.",
         'suggest-empty': 'Scrivi prima un tema.',
